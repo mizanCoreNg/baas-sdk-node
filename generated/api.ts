@@ -96,6 +96,255 @@ export type AddKybOfficerRequestRoleEnum = typeof AddKybOfficerRequestRoleEnum[k
 /**
  * 
  * @export
+ * @interface ApiKeyResource
+ */
+export interface ApiKeyResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'partner_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'key_prefix'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'scopes'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'environment'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'ip_allowlist'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ApiKeyResource
+     */
+    'is_active'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'last_used_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'expires_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'revoked_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'in_grace_period'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'previous_key_expires_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApiKeyResource
+     */
+    'created_at'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface BaasBalanceFeePreview201Response
+ */
+export interface BaasBalanceFeePreview201Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BaasBalanceFeePreview201Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasBalanceFeePreview201Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {BaasBalanceFeePreview201ResponseData}
+     * @memberof BaasBalanceFeePreview201Response
+     */
+    'data'?: BaasBalanceFeePreview201ResponseData;
+}
+/**
+ * @type BaasBalanceFeePreview201ResponseData
+ * @export
+ */
+export type BaasBalanceFeePreview201ResponseData = Array<WithdrawalFeePreviewResource> | WithdrawalFeePreviewResource | object;
+
+/**
+ * 
+ * @export
+ * @interface BaasTransactionResource
+ */
+export interface BaasTransactionResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'transaction_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'transaction_type_label'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'reference'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof BaasTransactionResource
+     */
+    'amount'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof BaasTransactionResource
+     */
+    'amount_naira'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof BaasTransactionResource
+     */
+    'fee_amount'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof BaasTransactionResource
+     */
+    'fee_amount_naira'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof BaasTransactionResource
+     */
+    'net_amount'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof BaasTransactionResource
+     */
+    'net_amount_naira'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'currency'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'narration'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'sender_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'sender_account'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'sender_bank'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'session_id'?: string;
+    /**
+     * 
+     * @type {object}
+     * @memberof BaasTransactionResource
+     */
+    'metadata'?: object | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'completed_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof BaasTransactionResource
+     */
+    'created_at'?: string | null;
+}
+/**
+ * 
+ * @export
  * @interface ChangeMemberRoleRequest
  */
 export interface ChangeMemberRoleRequest {
@@ -169,7 +418,8 @@ export const CreateApiKeyRequestScopesEnum = {
     CardsRead: 'cards:read',
     CardsWrite: 'cards:write',
     ConsentRead: 'consent:read',
-    ConsentWrite: 'consent:write'
+    ConsentWrite: 'consent:write',
+    FeesRead: 'fees:read'
 } as const;
 
 export type CreateApiKeyRequestScopesEnum = typeof CreateApiKeyRequestScopesEnum[keyof typeof CreateApiKeyRequestScopesEnum];
@@ -179,6 +429,130 @@ export const CreateApiKeyRequestEnvironmentEnum = {
 } as const;
 
 export type CreateApiKeyRequestEnvironmentEnum = typeof CreateApiKeyRequestEnvironmentEnum[keyof typeof CreateApiKeyRequestEnvironmentEnum];
+
+/**
+ * 
+ * @export
+ * @interface DeveloperApiKeyStore201Response
+ */
+export interface DeveloperApiKeyStore201Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperApiKeyStore201Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperApiKeyStore201Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperApiKeyStore201ResponseData}
+     * @memberof DeveloperApiKeyStore201Response
+     */
+    'data'?: DeveloperApiKeyStore201ResponseData;
+}
+/**
+ * @type DeveloperApiKeyStore201ResponseData
+ * @export
+ */
+export type DeveloperApiKeyStore201ResponseData = ApiKeyResource | Array<ApiKeyResource> | object;
+
+/**
+ * 
+ * @export
+ * @interface DeveloperAuthMe200Response
+ */
+export interface DeveloperAuthMe200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperAuthMe200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperAuthMe200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperAuthMe200ResponseData}
+     * @memberof DeveloperAuthMe200Response
+     */
+    'data'?: DeveloperAuthMe200ResponseData;
+}
+/**
+ * @type DeveloperAuthMe200ResponseData
+ * @export
+ */
+export type DeveloperAuthMe200ResponseData = Array<PartnerUserResource> | PartnerUserResource | object;
+
+/**
+ * 
+ * @export
+ * @interface DeveloperKybOfficersAdd201Response
+ */
+export interface DeveloperKybOfficersAdd201Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperKybOfficersAdd201Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperKybOfficersAdd201Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperKybOfficersAdd201ResponseData}
+     * @memberof DeveloperKybOfficersAdd201Response
+     */
+    'data'?: DeveloperKybOfficersAdd201ResponseData;
+}
+/**
+ * @type DeveloperKybOfficersAdd201ResponseData
+ * @export
+ */
+export type DeveloperKybOfficersAdd201ResponseData = Array<PartnerKybOfficerResource> | PartnerKybOfficerResource | object;
+
+/**
+ * 
+ * @export
+ * @interface DeveloperKybShow200Response
+ */
+export interface DeveloperKybShow200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperKybShow200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperKybShow200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperKybShow200ResponseData}
+     * @memberof DeveloperKybShow200Response
+     */
+    'data'?: DeveloperKybShow200ResponseData;
+}
+/**
+ * @type DeveloperKybShow200ResponseData
+ * @export
+ */
+export type DeveloperKybShow200ResponseData = Array<PartnerKybSubmissionResource> | PartnerKybSubmissionResource | object;
 
 /**
  * 
@@ -199,6 +573,180 @@ export interface DeveloperLoginRequest {
      */
     'password': string;
 }
+/**
+ * 
+ * @export
+ * @interface DeveloperRegistrationRegister201Response
+ */
+export interface DeveloperRegistrationRegister201Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperRegistrationRegister201Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperRegistrationRegister201Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperRegistrationRegister201ResponseData}
+     * @memberof DeveloperRegistrationRegister201Response
+     */
+    'data'?: DeveloperRegistrationRegister201ResponseData;
+}
+/**
+ * @type DeveloperRegistrationRegister201ResponseData
+ * @export
+ */
+export type DeveloperRegistrationRegister201ResponseData = Array<DeveloperRegistrationResource> | DeveloperRegistrationResource | object;
+
+/**
+ * 
+ * @export
+ * @interface DeveloperRegistrationResource
+ */
+export interface DeveloperRegistrationResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperRegistrationResource
+     */
+    'partner_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperRegistrationResource
+     */
+    'status'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface DeveloperSandboxStatus200Response
+ */
+export interface DeveloperSandboxStatus200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperSandboxStatus200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperSandboxStatus200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperSandboxStatus200ResponseData}
+     * @memberof DeveloperSandboxStatus200Response
+     */
+    'data'?: DeveloperSandboxStatus200ResponseData;
+}
+/**
+ * @type DeveloperSandboxStatus200ResponseData
+ * @export
+ */
+export type DeveloperSandboxStatus200ResponseData = Array<SandboxStatusResource> | SandboxStatusResource | object;
+
+/**
+ * 
+ * @export
+ * @interface DeveloperSandboxTestData200Response
+ */
+export interface DeveloperSandboxTestData200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperSandboxTestData200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperSandboxTestData200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperSandboxTestData200ResponseData}
+     * @memberof DeveloperSandboxTestData200Response
+     */
+    'data'?: DeveloperSandboxTestData200ResponseData;
+}
+/**
+ * @type DeveloperSandboxTestData200ResponseData
+ * @export
+ */
+export type DeveloperSandboxTestData200ResponseData = Array<SandboxTestDataResource> | SandboxTestDataResource | object;
+
+/**
+ * 
+ * @export
+ * @interface DeveloperStatementsIndex200Response
+ */
+export interface DeveloperStatementsIndex200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperStatementsIndex200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperStatementsIndex200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperStatementsIndex200ResponseData}
+     * @memberof DeveloperStatementsIndex200Response
+     */
+    'data'?: DeveloperStatementsIndex200ResponseData;
+}
+/**
+ * @type DeveloperStatementsIndex200ResponseData
+ * @export
+ */
+export type DeveloperStatementsIndex200ResponseData = Array<PartnerStatementResource> | PartnerStatementResource | object;
+
+/**
+ * 
+ * @export
+ * @interface DeveloperTeamAcceptInvite201Response
+ */
+export interface DeveloperTeamAcceptInvite201Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeveloperTeamAcceptInvite201Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperTeamAcceptInvite201Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {DeveloperTeamAcceptInvite201ResponseData}
+     * @memberof DeveloperTeamAcceptInvite201Response
+     */
+    'data'?: DeveloperTeamAcceptInvite201ResponseData;
+}
+/**
+ * @type DeveloperTeamAcceptInvite201ResponseData
+ * @export
+ */
+export type DeveloperTeamAcceptInvite201ResponseData = Array<PartnerTeamMemberResource> | PartnerTeamMemberResource | object;
+
 /**
  * 
  * @export
@@ -400,6 +948,12 @@ export interface InitiateWithdrawalRequest {
      * @memberof InitiateWithdrawalRequest
      */
     'narration'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InitiateWithdrawalRequest
+     */
+    'source_account'?: string | null;
 }
 /**
  * 
@@ -502,6 +1056,349 @@ export interface ListManagedCardTransactionsRequest {
 /**
  * 
  * @export
+ * @interface ManagedAccountIndex200Response
+ */
+export interface ManagedAccountIndex200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ManagedAccountIndex200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedAccountIndex200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {ManagedAccountIndex200ResponseData}
+     * @memberof ManagedAccountIndex200Response
+     */
+    'data'?: ManagedAccountIndex200ResponseData;
+}
+/**
+ * @type ManagedAccountIndex200ResponseData
+ * @export
+ */
+export type ManagedAccountIndex200ResponseData = Array<ManagedAccountResource> | ManagedAccountResource | object;
+
+/**
+ * 
+ * @export
+ * @interface ManagedAccountResource
+ */
+export interface ManagedAccountResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedAccountResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedAccountResource
+     */
+    'account_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedAccountResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedAccountResource
+     */
+    'currency'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof ManagedAccountResource
+     */
+    'balance_kobo'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedAccountResource
+     */
+    'nickname'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedAccountResource
+     */
+    'product_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedAccountResource
+     */
+    'customer_id'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ManagedCardReadIndex200Response
+ */
+export interface ManagedCardReadIndex200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ManagedCardReadIndex200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardReadIndex200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {ManagedCardReadIndex200ResponseData}
+     * @memberof ManagedCardReadIndex200Response
+     */
+    'data'?: ManagedCardReadIndex200ResponseData;
+}
+/**
+ * @type ManagedCardReadIndex200ResponseData
+ * @export
+ */
+export type ManagedCardReadIndex200ResponseData = Array<ManagedCardResource> | ManagedCardResource | object;
+
+/**
+ * 
+ * @export
+ * @interface ManagedCardReadTransactions200Response
+ */
+export interface ManagedCardReadTransactions200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ManagedCardReadTransactions200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardReadTransactions200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {ManagedCardReadTransactions200ResponseData}
+     * @memberof ManagedCardReadTransactions200Response
+     */
+    'data'?: ManagedCardReadTransactions200ResponseData;
+}
+/**
+ * @type ManagedCardReadTransactions200ResponseData
+ * @export
+ */
+export type ManagedCardReadTransactions200ResponseData = Array<ManagedCardTransactionResource> | ManagedCardTransactionResource | object;
+
+/**
+ * 
+ * @export
+ * @interface ManagedCardResource
+ */
+export interface ManagedCardResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'masked_pan'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'card_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'expiry_month'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'expiry_year'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'account_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'customer_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardResource
+     */
+    'processor_ref'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ManagedCardTransactionResource
+ */
+export interface ManagedCardTransactionResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'card_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'account_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'transaction_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'source'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof ManagedCardTransactionResource
+     */
+    'amount_kobo'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'fee_kobo'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'currency'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'merchant_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'merchant_category_code'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'processor_reference'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'retrieval_reference'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'response_code'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'transaction_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCardTransactionResource
+     */
+    'settlement_date'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ManagedCustomerIndex200Response
+ */
+export interface ManagedCustomerIndex200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ManagedCustomerIndex200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerIndex200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {ManagedCustomerIndex200ResponseData}
+     * @memberof ManagedCustomerIndex200Response
+     */
+    'data'?: ManagedCustomerIndex200ResponseData;
+}
+/**
+ * @type ManagedCustomerIndex200ResponseData
+ * @export
+ */
+export type ManagedCustomerIndex200ResponseData = Array<ManagedCustomerLinkResource> | ManagedCustomerLinkResource | object;
+
+/**
+ * 
+ * @export
  * @interface ManagedCustomerLifecycleRequest
  */
 export interface ManagedCustomerLifecycleRequest {
@@ -511,6 +1408,267 @@ export interface ManagedCustomerLifecycleRequest {
      * @memberof ManagedCustomerLifecycleRequest
      */
     'reason'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface ManagedCustomerLinkResource
+ */
+export interface ManagedCustomerLinkResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'customer_reference'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'onboarded_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'customer_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'pii_access'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'customer'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'customer_number'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'kyc_tier'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'first_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'last_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'full_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'phone_masked'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerLinkResource
+     */
+    'bvn_masked'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ManagedCustomerStatementShow200Response
+ */
+export interface ManagedCustomerStatementShow200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ManagedCustomerStatementShow200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedCustomerStatementShow200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {ManagedCustomerStatementShow200ResponseData}
+     * @memberof ManagedCustomerStatementShow200Response
+     */
+    'data'?: ManagedCustomerStatementShow200ResponseData;
+}
+/**
+ * @type ManagedCustomerStatementShow200ResponseData
+ * @export
+ */
+export type ManagedCustomerStatementShow200ResponseData = Array<ManagedStatementResource> | ManagedStatementResource | object;
+
+/**
+ * 
+ * @export
+ * @interface ManagedStatementResource
+ */
+export interface ManagedStatementResource {
+    /**
+     * 
+     * @type {number}
+     * @memberof ManagedStatementResource
+     */
+    'account'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'account_number'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof ManagedStatementResource
+     */
+    'current_balance_kobo'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'period'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'summary'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'total_credits_kobo'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'total_debits_kobo'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'net_change_kobo'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ManagedStatementResource
+     */
+    'transaction_count'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'transactions'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ManagedStatementResource
+     */
+    'transaction_number'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'direction'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'status'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof ManagedStatementResource
+     */
+    'amount_kobo'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'fee_kobo'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'currency'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'narration'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'reference'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'created_at'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagedStatementResource
+     */
+    'value_date'?: string;
 }
 /**
  * 
@@ -619,6 +1777,739 @@ export interface OpenManagedAccountRequest {
      * @memberof OpenManagedAccountRequest
      */
     'nickname'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerBalanceResource
+ */
+export interface PartnerBalanceResource {
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof PartnerBalanceResource
+     */
+    'balance_kobo'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof PartnerBalanceResource
+     */
+    'balance_naira'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerBalanceResource
+     */
+    'currency'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerBalanceResource
+     */
+    'total_credited'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerBalanceResource
+     */
+    'total_debited'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerBalanceResource
+     */
+    'settlement_account'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerConsentIndex200Response
+ */
+export interface PartnerConsentIndex200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PartnerConsentIndex200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentIndex200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {PartnerConsentIndex200ResponseData}
+     * @memberof PartnerConsentIndex200Response
+     */
+    'data'?: PartnerConsentIndex200ResponseData;
+}
+/**
+ * @type PartnerConsentIndex200ResponseData
+ * @export
+ */
+export type PartnerConsentIndex200ResponseData = Array<PartnerConsentResource> | PartnerConsentResource | object;
+
+/**
+ * 
+ * @export
+ * @interface PartnerConsentResource
+ */
+export interface PartnerConsentResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'customer_reference'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'consent_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'scope'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'granted_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'expires_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'revoked_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'recorded_by_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerConsentResource
+     */
+    'source_reference'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerFeeScheduleIndex200Response
+ */
+export interface PartnerFeeScheduleIndex200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PartnerFeeScheduleIndex200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerFeeScheduleIndex200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {PartnerFeeScheduleIndex200ResponseData}
+     * @memberof PartnerFeeScheduleIndex200Response
+     */
+    'data'?: PartnerFeeScheduleIndex200ResponseData;
+}
+/**
+ * @type PartnerFeeScheduleIndex200ResponseData
+ * @export
+ */
+export type PartnerFeeScheduleIndex200ResponseData = Array<PartnerFeeScheduleResource> | PartnerFeeScheduleResource | object;
+
+/**
+ * 
+ * @export
+ * @interface PartnerFeeScheduleResource
+ */
+export interface PartnerFeeScheduleResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'fee_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'charge_type'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'flat_amount'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'flat_amount_naira'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'percentage'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'min_fee'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'min_fee_naira'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'max_fee'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'max_fee_naira'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'tiers'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerFeeScheduleResource
+     */
+    'currency'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerKybOfficerResource
+ */
+export interface PartnerKybOfficerResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybOfficerResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybOfficerResource
+     */
+    'full_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybOfficerResource
+     */
+    'date_of_birth'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybOfficerResource
+     */
+    'role'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybOfficerResource
+     */
+    'ownership_percentage'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybOfficerResource
+     */
+    'bvn_masked'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerKybSubmissionResource
+ */
+export interface PartnerKybSubmissionResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'partner_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'registration_type'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'rc_number'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'legal_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'tax_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'registered_address'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'allows_live_access'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'rejection_reason'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'submitted_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'reviewed_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'officers'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerKybSubmissionResource
+     */
+    'documents'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerStatementResource
+ */
+export interface PartnerStatementResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'partner'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'code'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'period'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'from'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'to'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'virtual_account_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'currency'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof PartnerStatementResource
+     */
+    'opening_balance_kobo'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'total_credit_kobo'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'total_debit_kobo'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof PartnerStatementResource
+     */
+    'closing_balance_kobo'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof PartnerStatementResource
+     */
+    'movement_count'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'movements'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerStatementResource
+     */
+    'summaries'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerTeamMemberResource
+ */
+export interface PartnerTeamMemberResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerTeamMemberResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerTeamMemberResource
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerTeamMemberResource
+     */
+    'email'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerTeamMemberResource
+     */
+    'role'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerTeamMemberResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerTeamMemberResource
+     */
+    'last_login_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerTeamMemberResource
+     */
+    'invited_at'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerTransactionIndex200Response
+ */
+export interface PartnerTransactionIndex200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PartnerTransactionIndex200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerTransactionIndex200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {PartnerTransactionIndex200ResponseData}
+     * @memberof PartnerTransactionIndex200Response
+     */
+    'data'?: PartnerTransactionIndex200ResponseData;
+}
+/**
+ * @type PartnerTransactionIndex200ResponseData
+ * @export
+ */
+export type PartnerTransactionIndex200ResponseData = Array<BaasTransactionResource> | BaasTransactionResource | object;
+
+/**
+ * 
+ * @export
+ * @interface PartnerUserResource
+ */
+export interface PartnerUserResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'baas_partner_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'email'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'role'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PartnerUserResource
+     */
+    'mfa_enabled'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'email_verified_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'partner'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'settlement_mode'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'operating_model'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'kyb_status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerUserResource
+     */
+    'go_live'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerWalletBalance200Response
+ */
+export interface PartnerWalletBalance200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PartnerWalletBalance200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerWalletBalance200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {PartnerWalletBalance200ResponseData}
+     * @memberof PartnerWalletBalance200Response
+     */
+    'data'?: PartnerWalletBalance200ResponseData;
+}
+/**
+ * @type PartnerWalletBalance200ResponseData
+ * @export
+ */
+export type PartnerWalletBalance200ResponseData = Array<PartnerBalanceResource> | PartnerBalanceResource | object;
+
+/**
+ * 
+ * @export
+ * @interface RateLimitStatusResource
+ */
+export interface RateLimitStatusResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof RateLimitStatusResource
+     */
+    'partner_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RateLimitStatusResource
+     */
+    'reads_per_minute'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RateLimitStatusResource
+     */
+    'limit'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RateLimitStatusResource
+     */
+    'used'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RateLimitStatusResource
+     */
+    'remaining'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RateLimitStatusResource
+     */
+    'writes_per_minute'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RateLimitStatusResource
+     */
+    'overall_per_minute'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RateLimitStatusResource
+     */
+    'reset_at'?: string;
 }
 /**
  * 
@@ -735,6 +2626,80 @@ export interface RevokeConsentRequest {
      * @memberof RevokeConsentRequest
      */
     'reason'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface SandboxStatusResource
+ */
+export interface SandboxStatusResource {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SandboxStatusResource
+     */
+    'is_sandbox'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxStatusResource
+     */
+    'environment'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxStatusResource
+     */
+    'partner_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxStatusResource
+     */
+    'sandbox_enabled'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxStatusResource
+     */
+    'mock_providers_available'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxStatusResource
+     */
+    'test_data_available'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxStatusResource
+     */
+    'last_reset_at'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxStatusResource
+     */
+    'created_at'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface SandboxTestDataResource
+ */
+export interface SandboxTestDataResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxTestDataResource
+     */
+    'test_patterns'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SandboxTestDataResource
+     */
+    'documentation_url'?: string;
 }
 /**
  * 
@@ -1124,6 +3089,135 @@ export type UploadKybDocumentRequestDocumentTypeEnum = typeof UploadKybDocumentR
 /**
  * 
  * @export
+ * @interface UsageAnalyticsRateLimitStatus200Response
+ */
+export interface UsageAnalyticsRateLimitStatus200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UsageAnalyticsRateLimitStatus200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsRateLimitStatus200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {UsageAnalyticsRateLimitStatus200ResponseData}
+     * @memberof UsageAnalyticsRateLimitStatus200Response
+     */
+    'data'?: UsageAnalyticsRateLimitStatus200ResponseData;
+}
+/**
+ * @type UsageAnalyticsRateLimitStatus200ResponseData
+ * @export
+ */
+export type UsageAnalyticsRateLimitStatus200ResponseData = Array<RateLimitStatusResource> | RateLimitStatusResource | object;
+
+/**
+ * 
+ * @export
+ * @interface UsageAnalyticsResource
+ */
+export interface UsageAnalyticsResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsResource
+     */
+    'period'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsResource
+     */
+    'total_calls'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof UsageAnalyticsResource
+     */
+    'success_count'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UsageAnalyticsResource
+     */
+    'error_4xx_count'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UsageAnalyticsResource
+     */
+    'error_5xx_count'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsResource
+     */
+    'success_rate'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsResource
+     */
+    'avg_latency_ms'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsResource
+     */
+    'p95_latency_ms'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsResource
+     */
+    'p99_latency_ms'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsResource
+     */
+    'breakdown'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface UsageAnalyticsSummary200Response
+ */
+export interface UsageAnalyticsSummary200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UsageAnalyticsSummary200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof UsageAnalyticsSummary200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {UsageAnalyticsSummary200ResponseData}
+     * @memberof UsageAnalyticsSummary200Response
+     */
+    'data'?: UsageAnalyticsSummary200ResponseData;
+}
+/**
+ * @type UsageAnalyticsSummary200ResponseData
+ * @export
+ */
+export type UsageAnalyticsSummary200ResponseData = Array<UsageAnalyticsResource> | UsageAnalyticsResource | object;
+
+/**
+ * 
+ * @export
  * @interface ValidationError
  */
 export interface ValidationError {
@@ -1194,8 +3288,605 @@ export interface VirtualAccountQueryIndex200Response {
  * @type VirtualAccountQueryIndex200ResponseData
  * @export
  */
-export type VirtualAccountQueryIndex200ResponseData = Array<object> | object;
+export type VirtualAccountQueryIndex200ResponseData = Array<VirtualAccountResource> | VirtualAccountResource | object;
 
+/**
+ * 
+ * @export
+ * @interface VirtualAccountResource
+ */
+export interface VirtualAccountResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'account_number'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof VirtualAccountResource
+     */
+    'account_name'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'bank_code'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'bank_name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'max_uses'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof VirtualAccountResource
+     */
+    'use_count'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'expires_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'amount_validation'?: string;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'amount'?: string | null;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'bvn'?: string | null;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'nin'?: string | null;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'verified_name'?: string | null;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'verification_source'?: string | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof VirtualAccountResource
+     */
+    'is_verified'?: boolean;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'company_name'?: string | null;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'rc_number'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'incorporation_date'?: string | null;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'director_bvn'?: string | null;
+    /**
+     * Conditional field — included when the relation is loaded.
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'director_name'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'customer_reference'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'customer_data'?: string;
+    /**
+     * 
+     * @type {object}
+     * @memberof VirtualAccountResource
+     */
+    'metadata'?: object | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof VirtualAccountResource
+     */
+    'has_individual_balance'?: boolean;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof VirtualAccountResource
+     */
+    'balance'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof VirtualAccountResource
+     */
+    'available_balance'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'ledger_account_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'created_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof VirtualAccountResource
+     */
+    'updated_at'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface WebhookDeliveryLogResource
+ */
+export interface WebhookDeliveryLogResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'subscription_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'event_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'event_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'url'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'attempt_count'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'max_attempts'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'last_status_code'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'last_error'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'response_time_ms'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'idempotency_key'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'delivered_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'failed_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'next_retry_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'created_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogResource
+     */
+    'updated_at'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface WebhookDeliveryLogRetry201Response
+ */
+export interface WebhookDeliveryLogRetry201Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof WebhookDeliveryLogRetry201Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryLogRetry201Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {WebhookDeliveryLogRetry201ResponseData}
+     * @memberof WebhookDeliveryLogRetry201Response
+     */
+    'data'?: WebhookDeliveryLogRetry201ResponseData;
+}
+/**
+ * @type WebhookDeliveryLogRetry201ResponseData
+ * @export
+ */
+export type WebhookDeliveryLogRetry201ResponseData = Array<WebhookDeliveryLogResource> | WebhookDeliveryLogResource | object;
+
+/**
+ * 
+ * @export
+ * @interface WebhookDeliveryResource
+ */
+export interface WebhookDeliveryResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'subscription_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'event_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'event_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'status'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'attempts'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'idempotency_key'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'delivered_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'last_attempt_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'next_retry_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookDeliveryResource
+     */
+    'created_at'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface WebhookSubscriptionDestroy204Response
+ */
+export interface WebhookSubscriptionDestroy204Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof WebhookSubscriptionDestroy204Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionDestroy204Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {WebhookSubscriptionDestroy204ResponseData}
+     * @memberof WebhookSubscriptionDestroy204Response
+     */
+    'data'?: WebhookSubscriptionDestroy204ResponseData;
+}
+/**
+ * @type WebhookSubscriptionDestroy204ResponseData
+ * @export
+ */
+export type WebhookSubscriptionDestroy204ResponseData = Array<object> | object;
+
+/**
+ * 
+ * @export
+ * @interface WebhookSubscriptionIndex200Response
+ */
+export interface WebhookSubscriptionIndex200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof WebhookSubscriptionIndex200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionIndex200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {WebhookSubscriptionIndex200ResponseData}
+     * @memberof WebhookSubscriptionIndex200Response
+     */
+    'data'?: WebhookSubscriptionIndex200ResponseData;
+}
+/**
+ * @type WebhookSubscriptionIndex200ResponseData
+ * @export
+ */
+export type WebhookSubscriptionIndex200ResponseData = Array<WebhookSubscriptionResource> | WebhookSubscriptionResource | object;
+
+/**
+ * 
+ * @export
+ * @interface WebhookSubscriptionOperationsDeliveries200Response
+ */
+export interface WebhookSubscriptionOperationsDeliveries200Response {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof WebhookSubscriptionOperationsDeliveries200Response
+     */
+    'success'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionOperationsDeliveries200Response
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {WebhookSubscriptionOperationsDeliveries200ResponseData}
+     * @memberof WebhookSubscriptionOperationsDeliveries200Response
+     */
+    'data'?: WebhookSubscriptionOperationsDeliveries200ResponseData;
+}
+/**
+ * @type WebhookSubscriptionOperationsDeliveries200ResponseData
+ * @export
+ */
+export type WebhookSubscriptionOperationsDeliveries200ResponseData = Array<WebhookDeliveryResource> | WebhookDeliveryResource | object;
+
+/**
+ * 
+ * @export
+ * @interface WebhookSubscriptionResource
+ */
+export interface WebhookSubscriptionResource {
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionResource
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionResource
+     */
+    'partner_id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionResource
+     */
+    'url'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionResource
+     */
+    'events'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof WebhookSubscriptionResource
+     */
+    'is_active'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionResource
+     */
+    'webhook_rate_limit'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionResource
+     */
+    'secret'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionResource
+     */
+    'created_at'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookSubscriptionResource
+     */
+    'updated_at'?: string | null;
+}
+/**
+ * 
+ * @export
+ * @interface WithdrawalFeePreviewResource
+ */
+export interface WithdrawalFeePreviewResource {
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof WithdrawalFeePreviewResource
+     */
+    'amount_kobo'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof WithdrawalFeePreviewResource
+     */
+    'fee_kobo'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WithdrawalFeePreviewResource
+     */
+    'total_debit_kobo'?: string;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof WithdrawalFeePreviewResource
+     */
+    'current_balance_kobo'?: number;
+    /**
+     * Amount in kobo (minor currency units).
+     * @type {number}
+     * @memberof WithdrawalFeePreviewResource
+     */
+    'sufficient_balance'?: number;
+}
 
 /**
  * BaaSBalanceApi - axios parameter creator
@@ -1232,7 +3923,7 @@ export const BaaSBalanceApiAxiosParamCreator = function (configuration?: Configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -1249,7 +3940,7 @@ export const BaaSBalanceApiAxiosParamCreator = function (configuration?: Configu
             };
         },
         /**
-         * Calculates the fee breakdown for a given withdrawal amount without initiating the withdrawal. Includes platform and MFB fee shares, total debit, and whether the current balance is sufficient.
+         * Calculates the fee a partner would pay for a given withdrawal amount without initiating the withdrawal. Returns the fee, the total debit, and whether the current balance is sufficient. The internal platform/MFB revenue split is deliberately NOT exposed to partners.
          * @summary Preview withdrawal fee
          * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
          * @param {FeePreviewRequest} feePreviewRequest 
@@ -1280,7 +3971,7 @@ export const BaaSBalanceApiAxiosParamCreator = function (configuration?: Configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -1300,7 +3991,7 @@ export const BaaSBalanceApiAxiosParamCreator = function (configuration?: Configu
             };
         },
         /**
-         * Calculates the fee breakdown for a given withdrawal amount without initiating the withdrawal. Includes platform and MFB fee shares, total debit, and whether the current balance is sufficient.
+         * Calculates the fee a partner would pay for a given withdrawal amount without initiating the withdrawal. Returns the fee, the total debit, and whether the current balance is sufficient. The internal platform/MFB revenue split is deliberately NOT exposed to partners.
          * @summary Preview withdrawal fee
          * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
          * @param {FeePreviewRequest} feePreviewRequest 
@@ -1331,7 +4022,7 @@ export const BaaSBalanceApiAxiosParamCreator = function (configuration?: Configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -1367,35 +4058,35 @@ export const BaaSBalanceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async baasBalanceBalance(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async baasBalanceBalance(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerWalletBalance200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.baasBalanceBalance(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSBalanceApi.baasBalanceBalance']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Calculates the fee breakdown for a given withdrawal amount without initiating the withdrawal. Includes platform and MFB fee shares, total debit, and whether the current balance is sufficient.
+         * Calculates the fee a partner would pay for a given withdrawal amount without initiating the withdrawal. Returns the fee, the total debit, and whether the current balance is sufficient. The internal platform/MFB revenue split is deliberately NOT exposed to partners.
          * @summary Preview withdrawal fee
          * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
          * @param {FeePreviewRequest} feePreviewRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async baasBalanceFeePreview(xTenantID: string, feePreviewRequest: FeePreviewRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async baasBalanceFeePreview(xTenantID: string, feePreviewRequest: FeePreviewRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BaasBalanceFeePreview201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.baasBalanceFeePreview(xTenantID, feePreviewRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSBalanceApi.baasBalanceFeePreview']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Calculates the fee breakdown for a given withdrawal amount without initiating the withdrawal. Includes platform and MFB fee shares, total debit, and whether the current balance is sufficient.
+         * Calculates the fee a partner would pay for a given withdrawal amount without initiating the withdrawal. Returns the fee, the total debit, and whether the current balance is sufficient. The internal platform/MFB revenue split is deliberately NOT exposed to partners.
          * @summary Preview withdrawal fee
          * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
          * @param {FeePreviewRequest} feePreviewRequest 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWithdrawalsFeePreview(xTenantID: string, feePreviewRequest: FeePreviewRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWithdrawalsFeePreview(xTenantID: string, feePreviewRequest: FeePreviewRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BaasBalanceFeePreview201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWithdrawalsFeePreview(xTenantID, feePreviewRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSBalanceApi.developerWithdrawalsFeePreview']?.[localVarOperationServerIndex]?.url;
@@ -1418,27 +4109,27 @@ export const BaaSBalanceApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        baasBalanceBalance(requestParameters: BaaSBalanceApiBaasBalanceBalanceRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        baasBalanceBalance(requestParameters: BaaSBalanceApiBaasBalanceBalanceRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerWalletBalance200Response> {
             return localVarFp.baasBalanceBalance(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
-         * Calculates the fee breakdown for a given withdrawal amount without initiating the withdrawal. Includes platform and MFB fee shares, total debit, and whether the current balance is sufficient.
+         * Calculates the fee a partner would pay for a given withdrawal amount without initiating the withdrawal. Returns the fee, the total debit, and whether the current balance is sufficient. The internal platform/MFB revenue split is deliberately NOT exposed to partners.
          * @summary Preview withdrawal fee
          * @param {BaaSBalanceApiBaasBalanceFeePreviewRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        baasBalanceFeePreview(requestParameters: BaaSBalanceApiBaasBalanceFeePreviewRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        baasBalanceFeePreview(requestParameters: BaaSBalanceApiBaasBalanceFeePreviewRequest, options?: RawAxiosRequestConfig): AxiosPromise<BaasBalanceFeePreview201Response> {
             return localVarFp.baasBalanceFeePreview(requestParameters.xTenantID, requestParameters.feePreviewRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * Calculates the fee breakdown for a given withdrawal amount without initiating the withdrawal. Includes platform and MFB fee shares, total debit, and whether the current balance is sufficient.
+         * Calculates the fee a partner would pay for a given withdrawal amount without initiating the withdrawal. Returns the fee, the total debit, and whether the current balance is sufficient. The internal platform/MFB revenue split is deliberately NOT exposed to partners.
          * @summary Preview withdrawal fee
          * @param {BaaSBalanceApiDeveloperWithdrawalsFeePreviewRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWithdrawalsFeePreview(requestParameters: BaaSBalanceApiDeveloperWithdrawalsFeePreviewRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWithdrawalsFeePreview(requestParameters: BaaSBalanceApiDeveloperWithdrawalsFeePreviewRequest, options?: RawAxiosRequestConfig): AxiosPromise<BaasBalanceFeePreview201Response> {
             return localVarFp.developerWithdrawalsFeePreview(requestParameters.xTenantID, requestParameters.feePreviewRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -1520,7 +4211,7 @@ export class BaaSBalanceApi extends BaseAPI {
     }
 
     /**
-     * Calculates the fee breakdown for a given withdrawal amount without initiating the withdrawal. Includes platform and MFB fee shares, total debit, and whether the current balance is sufficient.
+     * Calculates the fee a partner would pay for a given withdrawal amount without initiating the withdrawal. Returns the fee, the total debit, and whether the current balance is sufficient. The internal platform/MFB revenue split is deliberately NOT exposed to partners.
      * @summary Preview withdrawal fee
      * @param {BaaSBalanceApiBaasBalanceFeePreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -1532,7 +4223,7 @@ export class BaaSBalanceApi extends BaseAPI {
     }
 
     /**
-     * Calculates the fee breakdown for a given withdrawal amount without initiating the withdrawal. Includes platform and MFB fee shares, total debit, and whether the current balance is sufficient.
+     * Calculates the fee a partner would pay for a given withdrawal amount without initiating the withdrawal. Returns the fee, the total debit, and whether the current balance is sufficient. The internal platform/MFB revenue split is deliberately NOT exposed to partners.
      * @summary Preview withdrawal fee
      * @param {BaaSBalanceApiDeveloperWithdrawalsFeePreviewRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -1541,6 +4232,233 @@ export class BaaSBalanceApi extends BaseAPI {
      */
     public developerWithdrawalsFeePreview(requestParameters: BaaSBalanceApiDeveloperWithdrawalsFeePreviewRequest, options?: RawAxiosRequestConfig) {
         return BaaSBalanceApiFp(this.configuration).developerWithdrawalsFeePreview(requestParameters.xTenantID, requestParameters.feePreviewRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * BaaSFeesApi - axios parameter creator
+ * @export
+ */
+export const BaaSFeesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Returns the calling partner\'s configured fee schedule — the cost the partner bears for each fee type (flat / percentage / tiered, with any min/max cap). Internal platform/MFB revenue-split fields are deliberately omitted. Fee types with no configured charge are returned as a zero \"no charge\" line so the price list is complete.
+         * @summary Get partner fee schedule
+         * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        developerFeesIndex: async (xTenantID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'xTenantID' is not null or undefined
+            assertParamExists('developerFeesIndex', 'xTenantID', xTenantID)
+            const localVarPath = `/api/v1/developer/fees`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication tenantHeader required
+            await setApiKeyToObject(localVarHeaderParameter, "X-Tenant-ID", configuration)
+
+            // authentication hmacAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
+
+            // authentication apiKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
+
+
+    
+            if (xTenantID != null) {
+                localVarHeaderParameter['X-Tenant-ID'] = String(xTenantID);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns the calling partner\'s configured fee schedule — the cost the partner bears for each fee type (flat / percentage / tiered, with any min/max cap). Internal platform/MFB revenue-split fields are deliberately omitted. Fee types with no configured charge are returned as a zero \"no charge\" line so the price list is complete.
+         * @summary Get partner fee schedule
+         * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        partnerFeeScheduleIndex: async (xTenantID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'xTenantID' is not null or undefined
+            assertParamExists('partnerFeeScheduleIndex', 'xTenantID', xTenantID)
+            const localVarPath = `/api/v1/baas/fees`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication tenantHeader required
+            await setApiKeyToObject(localVarHeaderParameter, "X-Tenant-ID", configuration)
+
+            // authentication hmacAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
+
+            // authentication apiKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
+
+
+    
+            if (xTenantID != null) {
+                localVarHeaderParameter['X-Tenant-ID'] = String(xTenantID);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * BaaSFeesApi - functional programming interface
+ * @export
+ */
+export const BaaSFeesApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = BaaSFeesApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Returns the calling partner\'s configured fee schedule — the cost the partner bears for each fee type (flat / percentage / tiered, with any min/max cap). Internal platform/MFB revenue-split fields are deliberately omitted. Fee types with no configured charge are returned as a zero \"no charge\" line so the price list is complete.
+         * @summary Get partner fee schedule
+         * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async developerFeesIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerFeeScheduleIndex200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.developerFeesIndex(xTenantID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['BaaSFeesApi.developerFeesIndex']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Returns the calling partner\'s configured fee schedule — the cost the partner bears for each fee type (flat / percentage / tiered, with any min/max cap). Internal platform/MFB revenue-split fields are deliberately omitted. Fee types with no configured charge are returned as a zero \"no charge\" line so the price list is complete.
+         * @summary Get partner fee schedule
+         * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async partnerFeeScheduleIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerFeeScheduleIndex200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.partnerFeeScheduleIndex(xTenantID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['BaaSFeesApi.partnerFeeScheduleIndex']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * BaaSFeesApi - factory interface
+ * @export
+ */
+export const BaaSFeesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = BaaSFeesApiFp(configuration)
+    return {
+        /**
+         * Returns the calling partner\'s configured fee schedule — the cost the partner bears for each fee type (flat / percentage / tiered, with any min/max cap). Internal platform/MFB revenue-split fields are deliberately omitted. Fee types with no configured charge are returned as a zero \"no charge\" line so the price list is complete.
+         * @summary Get partner fee schedule
+         * @param {BaaSFeesApiDeveloperFeesIndexRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        developerFeesIndex(requestParameters: BaaSFeesApiDeveloperFeesIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerFeeScheduleIndex200Response> {
+            return localVarFp.developerFeesIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns the calling partner\'s configured fee schedule — the cost the partner bears for each fee type (flat / percentage / tiered, with any min/max cap). Internal platform/MFB revenue-split fields are deliberately omitted. Fee types with no configured charge are returned as a zero \"no charge\" line so the price list is complete.
+         * @summary Get partner fee schedule
+         * @param {BaaSFeesApiPartnerFeeScheduleIndexRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        partnerFeeScheduleIndex(requestParameters: BaaSFeesApiPartnerFeeScheduleIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerFeeScheduleIndex200Response> {
+            return localVarFp.partnerFeeScheduleIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * Request parameters for developerFeesIndex operation in BaaSFeesApi.
+ * @export
+ * @interface BaaSFeesApiDeveloperFeesIndexRequest
+ */
+export interface BaaSFeesApiDeveloperFeesIndexRequest {
+    /**
+     * Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+     * @type {string}
+     * @memberof BaaSFeesApiDeveloperFeesIndex
+     */
+    readonly xTenantID: string
+}
+
+/**
+ * Request parameters for partnerFeeScheduleIndex operation in BaaSFeesApi.
+ * @export
+ * @interface BaaSFeesApiPartnerFeeScheduleIndexRequest
+ */
+export interface BaaSFeesApiPartnerFeeScheduleIndexRequest {
+    /**
+     * Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+     * @type {string}
+     * @memberof BaaSFeesApiPartnerFeeScheduleIndex
+     */
+    readonly xTenantID: string
+}
+
+/**
+ * BaaSFeesApi - object-oriented interface
+ * @export
+ * @class BaaSFeesApi
+ * @extends {BaseAPI}
+ */
+export class BaaSFeesApi extends BaseAPI {
+    /**
+     * Returns the calling partner\'s configured fee schedule — the cost the partner bears for each fee type (flat / percentage / tiered, with any min/max cap). Internal platform/MFB revenue-split fields are deliberately omitted. Fee types with no configured charge are returned as a zero \"no charge\" line so the price list is complete.
+     * @summary Get partner fee schedule
+     * @param {BaaSFeesApiDeveloperFeesIndexRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BaaSFeesApi
+     */
+    public developerFeesIndex(requestParameters: BaaSFeesApiDeveloperFeesIndexRequest, options?: RawAxiosRequestConfig) {
+        return BaaSFeesApiFp(this.configuration).developerFeesIndex(requestParameters.xTenantID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns the calling partner\'s configured fee schedule — the cost the partner bears for each fee type (flat / percentage / tiered, with any min/max cap). Internal platform/MFB revenue-split fields are deliberately omitted. Fee types with no configured charge are returned as a zero \"no charge\" line so the price list is complete.
+     * @summary Get partner fee schedule
+     * @param {BaaSFeesApiPartnerFeeScheduleIndexRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BaaSFeesApi
+     */
+    public partnerFeeScheduleIndex(requestParameters: BaaSFeesApiPartnerFeeScheduleIndexRequest, options?: RawAxiosRequestConfig) {
+        return BaaSFeesApiFp(this.configuration).partnerFeeScheduleIndex(requestParameters.xTenantID, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -1581,7 +4499,7 @@ export const BaaSTransactionsApiAxiosParamCreator = function (configuration?: Co
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -1630,7 +4548,7 @@ export const BaaSTransactionsApiAxiosParamCreator = function (configuration?: Co
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -1675,7 +4593,7 @@ export const BaaSTransactionsApiAxiosParamCreator = function (configuration?: Co
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -1724,7 +4642,7 @@ export const BaaSTransactionsApiAxiosParamCreator = function (configuration?: Co
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -1757,7 +4675,7 @@ export const BaaSTransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerTransactionsIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerTransactionsIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerTransactionsIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSTransactionsApi.developerTransactionsIndex']?.[localVarOperationServerIndex]?.url;
@@ -1771,7 +4689,7 @@ export const BaaSTransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerTransactionsShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerTransactionsShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerTransactionsShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSTransactionsApi.developerTransactionsShow']?.[localVarOperationServerIndex]?.url;
@@ -1784,7 +4702,7 @@ export const BaaSTransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerTransactionIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerTransactionIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerTransactionIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSTransactionsApi.partnerTransactionIndex']?.[localVarOperationServerIndex]?.url;
@@ -1798,7 +4716,7 @@ export const BaaSTransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerTransactionShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerTransactionShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerTransactionShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSTransactionsApi.partnerTransactionShow']?.[localVarOperationServerIndex]?.url;
@@ -1821,7 +4739,7 @@ export const BaaSTransactionsApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerTransactionsIndex(requestParameters: BaaSTransactionsApiDeveloperTransactionsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerTransactionsIndex(requestParameters: BaaSTransactionsApiDeveloperTransactionsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.developerTransactionsIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1831,7 +4749,7 @@ export const BaaSTransactionsApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerTransactionsShow(requestParameters: BaaSTransactionsApiDeveloperTransactionsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerTransactionsShow(requestParameters: BaaSTransactionsApiDeveloperTransactionsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.developerTransactionsShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1841,7 +4759,7 @@ export const BaaSTransactionsApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerTransactionIndex(requestParameters: BaaSTransactionsApiPartnerTransactionIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerTransactionIndex(requestParameters: BaaSTransactionsApiPartnerTransactionIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.partnerTransactionIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1851,7 +4769,7 @@ export const BaaSTransactionsApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerTransactionShow(requestParameters: BaaSTransactionsApiPartnerTransactionShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerTransactionShow(requestParameters: BaaSTransactionsApiPartnerTransactionShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.partnerTransactionShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -2027,7 +4945,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2078,7 +4996,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2126,7 +5044,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2171,7 +5089,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2220,7 +5138,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2272,7 +5190,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2323,7 +5241,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2371,7 +5289,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2416,7 +5334,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -2465,7 +5383,7 @@ export const BaaSVirtualAccountsApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3103,7 +6021,7 @@ export const BaaSWalletApiAxiosParamCreator = function (configuration?: Configur
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3148,7 +6066,7 @@ export const BaaSWalletApiAxiosParamCreator = function (configuration?: Configur
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3193,7 +6111,7 @@ export const BaaSWalletApiAxiosParamCreator = function (configuration?: Configur
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3238,7 +6156,7 @@ export const BaaSWalletApiAxiosParamCreator = function (configuration?: Configur
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3271,7 +6189,7 @@ export const BaaSWalletApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWalletBalance(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWalletBalance(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerWalletBalance200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWalletBalance(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWalletApi.developerWalletBalance']?.[localVarOperationServerIndex]?.url;
@@ -3284,7 +6202,7 @@ export const BaaSWalletApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWalletTransactions(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWalletTransactions(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWalletTransactions(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWalletApi.developerWalletTransactions']?.[localVarOperationServerIndex]?.url;
@@ -3297,7 +6215,7 @@ export const BaaSWalletApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerWalletBalance(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerWalletBalance(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerWalletBalance200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerWalletBalance(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWalletApi.partnerWalletBalance']?.[localVarOperationServerIndex]?.url;
@@ -3310,7 +6228,7 @@ export const BaaSWalletApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerWalletTransactions(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerWalletTransactions(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerWalletTransactions(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWalletApi.partnerWalletTransactions']?.[localVarOperationServerIndex]?.url;
@@ -3333,7 +6251,7 @@ export const BaaSWalletApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWalletBalance(requestParameters: BaaSWalletApiDeveloperWalletBalanceRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWalletBalance(requestParameters: BaaSWalletApiDeveloperWalletBalanceRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerWalletBalance200Response> {
             return localVarFp.developerWalletBalance(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -3343,7 +6261,7 @@ export const BaaSWalletApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWalletTransactions(requestParameters: BaaSWalletApiDeveloperWalletTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWalletTransactions(requestParameters: BaaSWalletApiDeveloperWalletTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.developerWalletTransactions(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -3353,7 +6271,7 @@ export const BaaSWalletApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerWalletBalance(requestParameters: BaaSWalletApiPartnerWalletBalanceRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerWalletBalance(requestParameters: BaaSWalletApiPartnerWalletBalanceRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerWalletBalance200Response> {
             return localVarFp.partnerWalletBalance(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -3363,7 +6281,7 @@ export const BaaSWalletApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerWalletTransactions(requestParameters: BaaSWalletApiPartnerWalletTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerWalletTransactions(requestParameters: BaaSWalletApiPartnerWalletTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.partnerWalletTransactions(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -3522,7 +6440,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3571,7 +6489,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3616,7 +6534,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3665,7 +6583,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3714,7 +6632,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3762,7 +6680,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3814,7 +6732,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3866,7 +6784,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3918,7 +6836,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -3963,7 +6881,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -4012,7 +6930,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -4061,7 +6979,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -4110,7 +7028,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -4159,7 +7077,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -4207,7 +7125,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -4262,7 +7180,7 @@ export const BaaSWebhooksApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -4299,7 +7217,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWebhooksDeliveries(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWebhooksDeliveries(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionOperationsDeliveries200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWebhooksDeliveries(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.developerWebhooksDeliveries']?.[localVarOperationServerIndex]?.url;
@@ -4313,7 +7231,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWebhooksDestroy(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWebhooksDestroy(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWebhooksDestroy(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.developerWebhooksDestroy']?.[localVarOperationServerIndex]?.url;
@@ -4326,7 +7244,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWebhooksIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWebhooksIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWebhooksIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.developerWebhooksIndex']?.[localVarOperationServerIndex]?.url;
@@ -4340,7 +7258,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWebhooksRotateSecret(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWebhooksRotateSecret(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWebhooksRotateSecret(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.developerWebhooksRotateSecret']?.[localVarOperationServerIndex]?.url;
@@ -4354,7 +7272,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWebhooksShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWebhooksShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWebhooksShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.developerWebhooksShow']?.[localVarOperationServerIndex]?.url;
@@ -4368,7 +7286,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWebhooksStore(xTenantID: string, storeWebhookSubscriptionRequest: StoreWebhookSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWebhooksStore(xTenantID: string, storeWebhookSubscriptionRequest: StoreWebhookSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWebhooksStore(xTenantID, storeWebhookSubscriptionRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.developerWebhooksStore']?.[localVarOperationServerIndex]?.url;
@@ -4382,7 +7300,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWebhooksTest(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWebhooksTest(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWebhooksTest(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.developerWebhooksTest']?.[localVarOperationServerIndex]?.url;
@@ -4397,7 +7315,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWebhooksUpdate(id: string, xTenantID: string, updateWebhookSubscriptionRequest: UpdateWebhookSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWebhooksUpdate(id: string, xTenantID: string, updateWebhookSubscriptionRequest: UpdateWebhookSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWebhooksUpdate(id, xTenantID, updateWebhookSubscriptionRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.developerWebhooksUpdate']?.[localVarOperationServerIndex]?.url;
@@ -4411,7 +7329,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSubscriptionDestroy(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookSubscriptionDestroy(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSubscriptionDestroy(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.webhookSubscriptionDestroy']?.[localVarOperationServerIndex]?.url;
@@ -4424,7 +7342,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSubscriptionIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookSubscriptionIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSubscriptionIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.webhookSubscriptionIndex']?.[localVarOperationServerIndex]?.url;
@@ -4438,7 +7356,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSubscriptionOperationsDeliveries(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookSubscriptionOperationsDeliveries(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionOperationsDeliveries200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSubscriptionOperationsDeliveries(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.webhookSubscriptionOperationsDeliveries']?.[localVarOperationServerIndex]?.url;
@@ -4452,7 +7370,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSubscriptionOperationsRotateSecret(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookSubscriptionOperationsRotateSecret(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSubscriptionOperationsRotateSecret(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.webhookSubscriptionOperationsRotateSecret']?.[localVarOperationServerIndex]?.url;
@@ -4466,7 +7384,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSubscriptionOperationsTest(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookSubscriptionOperationsTest(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSubscriptionOperationsTest(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.webhookSubscriptionOperationsTest']?.[localVarOperationServerIndex]?.url;
@@ -4480,7 +7398,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSubscriptionShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookSubscriptionShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSubscriptionShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.webhookSubscriptionShow']?.[localVarOperationServerIndex]?.url;
@@ -4494,7 +7412,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSubscriptionStore(xTenantID: string, storeWebhookSubscriptionRequest: StoreWebhookSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookSubscriptionStore(xTenantID: string, storeWebhookSubscriptionRequest: StoreWebhookSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSubscriptionStore(xTenantID, storeWebhookSubscriptionRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.webhookSubscriptionStore']?.[localVarOperationServerIndex]?.url;
@@ -4509,7 +7427,7 @@ export const BaaSWebhooksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSubscriptionUpdate(id: string, xTenantID: string, updateWebhookSubscriptionRequest: UpdateWebhookSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookSubscriptionUpdate(id: string, xTenantID: string, updateWebhookSubscriptionRequest: UpdateWebhookSubscriptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSubscriptionUpdate(id, xTenantID, updateWebhookSubscriptionRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWebhooksApi.webhookSubscriptionUpdate']?.[localVarOperationServerIndex]?.url;
@@ -4532,7 +7450,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWebhooksDeliveries(requestParameters: BaaSWebhooksApiDeveloperWebhooksDeliveriesRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWebhooksDeliveries(requestParameters: BaaSWebhooksApiDeveloperWebhooksDeliveriesRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionOperationsDeliveries200Response> {
             return localVarFp.developerWebhooksDeliveries(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4542,7 +7460,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWebhooksDestroy(requestParameters: BaaSWebhooksApiDeveloperWebhooksDestroyRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWebhooksDestroy(requestParameters: BaaSWebhooksApiDeveloperWebhooksDestroyRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerWebhooksDestroy(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4552,7 +7470,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWebhooksIndex(requestParameters: BaaSWebhooksApiDeveloperWebhooksIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWebhooksIndex(requestParameters: BaaSWebhooksApiDeveloperWebhooksIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionIndex200Response> {
             return localVarFp.developerWebhooksIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4562,7 +7480,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWebhooksRotateSecret(requestParameters: BaaSWebhooksApiDeveloperWebhooksRotateSecretRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWebhooksRotateSecret(requestParameters: BaaSWebhooksApiDeveloperWebhooksRotateSecretRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerWebhooksRotateSecret(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4572,7 +7490,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWebhooksShow(requestParameters: BaaSWebhooksApiDeveloperWebhooksShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWebhooksShow(requestParameters: BaaSWebhooksApiDeveloperWebhooksShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionIndex200Response> {
             return localVarFp.developerWebhooksShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4582,7 +7500,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWebhooksStore(requestParameters: BaaSWebhooksApiDeveloperWebhooksStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWebhooksStore(requestParameters: BaaSWebhooksApiDeveloperWebhooksStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionIndex200Response> {
             return localVarFp.developerWebhooksStore(requestParameters.xTenantID, requestParameters.storeWebhookSubscriptionRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4592,7 +7510,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWebhooksTest(requestParameters: BaaSWebhooksApiDeveloperWebhooksTestRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWebhooksTest(requestParameters: BaaSWebhooksApiDeveloperWebhooksTestRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerWebhooksTest(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4602,7 +7520,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWebhooksUpdate(requestParameters: BaaSWebhooksApiDeveloperWebhooksUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWebhooksUpdate(requestParameters: BaaSWebhooksApiDeveloperWebhooksUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionIndex200Response> {
             return localVarFp.developerWebhooksUpdate(requestParameters.id, requestParameters.xTenantID, requestParameters.updateWebhookSubscriptionRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4612,7 +7530,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSubscriptionDestroy(requestParameters: BaaSWebhooksApiWebhookSubscriptionDestroyRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookSubscriptionDestroy(requestParameters: BaaSWebhooksApiWebhookSubscriptionDestroyRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.webhookSubscriptionDestroy(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4622,7 +7540,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSubscriptionIndex(requestParameters: BaaSWebhooksApiWebhookSubscriptionIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookSubscriptionIndex(requestParameters: BaaSWebhooksApiWebhookSubscriptionIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionIndex200Response> {
             return localVarFp.webhookSubscriptionIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4632,7 +7550,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSubscriptionOperationsDeliveries(requestParameters: BaaSWebhooksApiWebhookSubscriptionOperationsDeliveriesRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookSubscriptionOperationsDeliveries(requestParameters: BaaSWebhooksApiWebhookSubscriptionOperationsDeliveriesRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionOperationsDeliveries200Response> {
             return localVarFp.webhookSubscriptionOperationsDeliveries(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4642,7 +7560,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSubscriptionOperationsRotateSecret(requestParameters: BaaSWebhooksApiWebhookSubscriptionOperationsRotateSecretRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookSubscriptionOperationsRotateSecret(requestParameters: BaaSWebhooksApiWebhookSubscriptionOperationsRotateSecretRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.webhookSubscriptionOperationsRotateSecret(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4652,7 +7570,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSubscriptionOperationsTest(requestParameters: BaaSWebhooksApiWebhookSubscriptionOperationsTestRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookSubscriptionOperationsTest(requestParameters: BaaSWebhooksApiWebhookSubscriptionOperationsTestRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.webhookSubscriptionOperationsTest(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4662,7 +7580,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSubscriptionShow(requestParameters: BaaSWebhooksApiWebhookSubscriptionShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookSubscriptionShow(requestParameters: BaaSWebhooksApiWebhookSubscriptionShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionIndex200Response> {
             return localVarFp.webhookSubscriptionShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4672,7 +7590,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSubscriptionStore(requestParameters: BaaSWebhooksApiWebhookSubscriptionStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookSubscriptionStore(requestParameters: BaaSWebhooksApiWebhookSubscriptionStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionIndex200Response> {
             return localVarFp.webhookSubscriptionStore(requestParameters.xTenantID, requestParameters.storeWebhookSubscriptionRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4682,7 +7600,7 @@ export const BaaSWebhooksApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSubscriptionUpdate(requestParameters: BaaSWebhooksApiWebhookSubscriptionUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookSubscriptionUpdate(requestParameters: BaaSWebhooksApiWebhookSubscriptionUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionIndex200Response> {
             return localVarFp.webhookSubscriptionUpdate(requestParameters.id, requestParameters.xTenantID, requestParameters.updateWebhookSubscriptionRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -5261,7 +8179,7 @@ export const BaaSWithdrawalsApiAxiosParamCreator = function (configuration?: Con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -5310,7 +8228,7 @@ export const BaaSWithdrawalsApiAxiosParamCreator = function (configuration?: Con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -5327,7 +8245,7 @@ export const BaaSWithdrawalsApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * Submits a withdrawal request to transfer funds from the partner settlement account to an external bank account via NIP. The amount must be in kobo.
+         * Submits a withdrawal request to transfer funds to an external bank account via NIP. The amount must be in kobo. By default the partner settlement pool is debited; va_held-mode partners may pass source_account (a VA NUBAN they own) to debit that specific virtual account instead.
          * @summary Initiate a withdrawal
          * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
          * @param {string} idempotencyKey Unique client-generated key (UUID recommended) for idempotent retry semantics. Duplicate requests return the cached response with header Idempotency-Replayed: true.
@@ -5361,7 +8279,7 @@ export const BaaSWithdrawalsApiAxiosParamCreator = function (configuration?: Con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -5412,7 +8330,7 @@ export const BaaSWithdrawalsApiAxiosParamCreator = function (configuration?: Con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -5461,7 +8379,7 @@ export const BaaSWithdrawalsApiAxiosParamCreator = function (configuration?: Con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -5478,7 +8396,7 @@ export const BaaSWithdrawalsApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * Submits a withdrawal request to transfer funds from the partner settlement account to an external bank account via NIP. The amount must be in kobo.
+         * Submits a withdrawal request to transfer funds to an external bank account via NIP. The amount must be in kobo. By default the partner settlement pool is debited; va_held-mode partners may pass source_account (a VA NUBAN they own) to debit that specific virtual account instead.
          * @summary Initiate a withdrawal
          * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
          * @param {string} idempotencyKey Unique client-generated key (UUID recommended) for idempotent retry semantics. Duplicate requests return the cached response with header Idempotency-Replayed: true.
@@ -5512,7 +8430,7 @@ export const BaaSWithdrawalsApiAxiosParamCreator = function (configuration?: Con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -5551,7 +8469,7 @@ export const BaaSWithdrawalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async baasWithdrawalIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async baasWithdrawalIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.baasWithdrawalIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWithdrawalsApi.baasWithdrawalIndex']?.[localVarOperationServerIndex]?.url;
@@ -5565,14 +8483,14 @@ export const BaaSWithdrawalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async baasWithdrawalShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async baasWithdrawalShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.baasWithdrawalShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWithdrawalsApi.baasWithdrawalShow']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Submits a withdrawal request to transfer funds from the partner settlement account to an external bank account via NIP. The amount must be in kobo.
+         * Submits a withdrawal request to transfer funds to an external bank account via NIP. The amount must be in kobo. By default the partner settlement pool is debited; va_held-mode partners may pass source_account (a VA NUBAN they own) to debit that specific virtual account instead.
          * @summary Initiate a withdrawal
          * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
          * @param {string} idempotencyKey Unique client-generated key (UUID recommended) for idempotent retry semantics. Duplicate requests return the cached response with header Idempotency-Replayed: true.
@@ -5580,7 +8498,7 @@ export const BaaSWithdrawalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async baasWithdrawalStore(xTenantID: string, idempotencyKey: string, initiateWithdrawalRequest: InitiateWithdrawalRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async baasWithdrawalStore(xTenantID: string, idempotencyKey: string, initiateWithdrawalRequest: InitiateWithdrawalRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.baasWithdrawalStore(xTenantID, idempotencyKey, initiateWithdrawalRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWithdrawalsApi.baasWithdrawalStore']?.[localVarOperationServerIndex]?.url;
@@ -5593,7 +8511,7 @@ export const BaaSWithdrawalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWithdrawalsIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWithdrawalsIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWithdrawalsIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWithdrawalsApi.developerWithdrawalsIndex']?.[localVarOperationServerIndex]?.url;
@@ -5607,14 +8525,14 @@ export const BaaSWithdrawalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWithdrawalsShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWithdrawalsShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWithdrawalsShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWithdrawalsApi.developerWithdrawalsShow']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Submits a withdrawal request to transfer funds from the partner settlement account to an external bank account via NIP. The amount must be in kobo.
+         * Submits a withdrawal request to transfer funds to an external bank account via NIP. The amount must be in kobo. By default the partner settlement pool is debited; va_held-mode partners may pass source_account (a VA NUBAN they own) to debit that specific virtual account instead.
          * @summary Initiate a withdrawal
          * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
          * @param {string} idempotencyKey Unique client-generated key (UUID recommended) for idempotent retry semantics. Duplicate requests return the cached response with header Idempotency-Replayed: true.
@@ -5622,7 +8540,7 @@ export const BaaSWithdrawalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerWithdrawalsStore(xTenantID: string, idempotencyKey: string, initiateWithdrawalRequest: InitiateWithdrawalRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerWithdrawalsStore(xTenantID: string, idempotencyKey: string, initiateWithdrawalRequest: InitiateWithdrawalRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerTransactionIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerWithdrawalsStore(xTenantID, idempotencyKey, initiateWithdrawalRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['BaaSWithdrawalsApi.developerWithdrawalsStore']?.[localVarOperationServerIndex]?.url;
@@ -5645,7 +8563,7 @@ export const BaaSWithdrawalsApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        baasWithdrawalIndex(requestParameters: BaaSWithdrawalsApiBaasWithdrawalIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        baasWithdrawalIndex(requestParameters: BaaSWithdrawalsApiBaasWithdrawalIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.baasWithdrawalIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5655,17 +8573,17 @@ export const BaaSWithdrawalsApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        baasWithdrawalShow(requestParameters: BaaSWithdrawalsApiBaasWithdrawalShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        baasWithdrawalShow(requestParameters: BaaSWithdrawalsApiBaasWithdrawalShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.baasWithdrawalShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
-         * Submits a withdrawal request to transfer funds from the partner settlement account to an external bank account via NIP. The amount must be in kobo.
+         * Submits a withdrawal request to transfer funds to an external bank account via NIP. The amount must be in kobo. By default the partner settlement pool is debited; va_held-mode partners may pass source_account (a VA NUBAN they own) to debit that specific virtual account instead.
          * @summary Initiate a withdrawal
          * @param {BaaSWithdrawalsApiBaasWithdrawalStoreRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        baasWithdrawalStore(requestParameters: BaaSWithdrawalsApiBaasWithdrawalStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        baasWithdrawalStore(requestParameters: BaaSWithdrawalsApiBaasWithdrawalStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.baasWithdrawalStore(requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.initiateWithdrawalRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5675,7 +8593,7 @@ export const BaaSWithdrawalsApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWithdrawalsIndex(requestParameters: BaaSWithdrawalsApiDeveloperWithdrawalsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWithdrawalsIndex(requestParameters: BaaSWithdrawalsApiDeveloperWithdrawalsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.developerWithdrawalsIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -5685,17 +8603,17 @@ export const BaaSWithdrawalsApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWithdrawalsShow(requestParameters: BaaSWithdrawalsApiDeveloperWithdrawalsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWithdrawalsShow(requestParameters: BaaSWithdrawalsApiDeveloperWithdrawalsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.developerWithdrawalsShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
-         * Submits a withdrawal request to transfer funds from the partner settlement account to an external bank account via NIP. The amount must be in kobo.
+         * Submits a withdrawal request to transfer funds to an external bank account via NIP. The amount must be in kobo. By default the partner settlement pool is debited; va_held-mode partners may pass source_account (a VA NUBAN they own) to debit that specific virtual account instead.
          * @summary Initiate a withdrawal
          * @param {BaaSWithdrawalsApiDeveloperWithdrawalsStoreRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerWithdrawalsStore(requestParameters: BaaSWithdrawalsApiDeveloperWithdrawalsStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerWithdrawalsStore(requestParameters: BaaSWithdrawalsApiDeveloperWithdrawalsStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerTransactionIndex200Response> {
             return localVarFp.developerWithdrawalsStore(requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.initiateWithdrawalRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -5859,7 +8777,7 @@ export class BaaSWithdrawalsApi extends BaseAPI {
     }
 
     /**
-     * Submits a withdrawal request to transfer funds from the partner settlement account to an external bank account via NIP. The amount must be in kobo.
+     * Submits a withdrawal request to transfer funds to an external bank account via NIP. The amount must be in kobo. By default the partner settlement pool is debited; va_held-mode partners may pass source_account (a VA NUBAN they own) to debit that specific virtual account instead.
      * @summary Initiate a withdrawal
      * @param {BaaSWithdrawalsApiBaasWithdrawalStoreRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -5895,7 +8813,7 @@ export class BaaSWithdrawalsApi extends BaseAPI {
     }
 
     /**
-     * Submits a withdrawal request to transfer funds from the partner settlement account to an external bank account via NIP. The amount must be in kobo.
+     * Submits a withdrawal request to transfer funds to an external bank account via NIP. The amount must be in kobo. By default the partner settlement pool is debited; va_held-mode partners may pass source_account (a VA NUBAN they own) to debit that specific virtual account instead.
      * @summary Initiate a withdrawal
      * @param {BaaSWithdrawalsApiDeveloperWithdrawalsStoreRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -5944,7 +8862,7 @@ export const DeveloperPortalAPIKeysApiAxiosParamCreator = function (configuratio
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -5996,7 +8914,7 @@ export const DeveloperPortalAPIKeysApiAxiosParamCreator = function (configuratio
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -6048,7 +8966,7 @@ export const DeveloperPortalAPIKeysApiAxiosParamCreator = function (configuratio
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -6096,7 +9014,7 @@ export const DeveloperPortalAPIKeysApiAxiosParamCreator = function (configuratio
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -6132,7 +9050,7 @@ export const DeveloperPortalAPIKeysApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerApiKeyIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerApiKeyIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerApiKeyIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalAPIKeysApi.developerApiKeyIndex']?.[localVarOperationServerIndex]?.url;
@@ -6147,7 +9065,7 @@ export const DeveloperPortalAPIKeysApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerApiKeyRevoke(id: string, xTenantID: string, revokeApiKeyRequest: RevokeApiKeyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerApiKeyRevoke(id: string, xTenantID: string, revokeApiKeyRequest: RevokeApiKeyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperApiKeyStore201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerApiKeyRevoke(id, xTenantID, revokeApiKeyRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalAPIKeysApi.developerApiKeyRevoke']?.[localVarOperationServerIndex]?.url;
@@ -6161,7 +9079,7 @@ export const DeveloperPortalAPIKeysApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerApiKeyRotate(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerApiKeyRotate(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperApiKeyStore201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerApiKeyRotate(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalAPIKeysApi.developerApiKeyRotate']?.[localVarOperationServerIndex]?.url;
@@ -6175,7 +9093,7 @@ export const DeveloperPortalAPIKeysApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerApiKeyStore(xTenantID: string, createApiKeyRequest: CreateApiKeyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerApiKeyStore(xTenantID: string, createApiKeyRequest: CreateApiKeyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperApiKeyStore201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerApiKeyStore(xTenantID, createApiKeyRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalAPIKeysApi.developerApiKeyStore']?.[localVarOperationServerIndex]?.url;
@@ -6198,7 +9116,7 @@ export const DeveloperPortalAPIKeysApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerApiKeyIndex(requestParameters: DeveloperPortalAPIKeysApiDeveloperApiKeyIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerApiKeyIndex(requestParameters: DeveloperPortalAPIKeysApiDeveloperApiKeyIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerApiKeyIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6208,7 +9126,7 @@ export const DeveloperPortalAPIKeysApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerApiKeyRevoke(requestParameters: DeveloperPortalAPIKeysApiDeveloperApiKeyRevokeRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerApiKeyRevoke(requestParameters: DeveloperPortalAPIKeysApiDeveloperApiKeyRevokeRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperApiKeyStore201Response> {
             return localVarFp.developerApiKeyRevoke(requestParameters.id, requestParameters.xTenantID, requestParameters.revokeApiKeyRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6218,7 +9136,7 @@ export const DeveloperPortalAPIKeysApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerApiKeyRotate(requestParameters: DeveloperPortalAPIKeysApiDeveloperApiKeyRotateRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerApiKeyRotate(requestParameters: DeveloperPortalAPIKeysApiDeveloperApiKeyRotateRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperApiKeyStore201Response> {
             return localVarFp.developerApiKeyRotate(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6228,7 +9146,7 @@ export const DeveloperPortalAPIKeysApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerApiKeyStore(requestParameters: DeveloperPortalAPIKeysApiDeveloperApiKeyStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerApiKeyStore(requestParameters: DeveloperPortalAPIKeysApiDeveloperApiKeyStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperApiKeyStore201Response> {
             return localVarFp.developerApiKeyStore(requestParameters.xTenantID, requestParameters.createApiKeyRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -6453,7 +9371,7 @@ export const DeveloperPortalAuthenticationApiAxiosParamCreator = function (confi
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -6498,7 +9416,7 @@ export const DeveloperPortalAuthenticationApiAxiosParamCreator = function (confi
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -6532,7 +9450,7 @@ export const DeveloperPortalAuthenticationApiFp = function(configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAuthLogin(xTenantID: string, developerLoginRequest: DeveloperLoginRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAuthLogin(xTenantID: string, developerLoginRequest: DeveloperLoginRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAuthLogin(xTenantID, developerLoginRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalAuthenticationApi.developerAuthLogin']?.[localVarOperationServerIndex]?.url;
@@ -6545,7 +9463,7 @@ export const DeveloperPortalAuthenticationApiFp = function(configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAuthLogout(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAuthLogout(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAuthLogout(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalAuthenticationApi.developerAuthLogout']?.[localVarOperationServerIndex]?.url;
@@ -6558,7 +9476,7 @@ export const DeveloperPortalAuthenticationApiFp = function(configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAuthMe(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAuthMe(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperAuthMe200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAuthMe(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalAuthenticationApi.developerAuthMe']?.[localVarOperationServerIndex]?.url;
@@ -6581,7 +9499,7 @@ export const DeveloperPortalAuthenticationApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAuthLogin(requestParameters: DeveloperPortalAuthenticationApiDeveloperAuthLoginRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAuthLogin(requestParameters: DeveloperPortalAuthenticationApiDeveloperAuthLoginRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerAuthLogin(requestParameters.xTenantID, requestParameters.developerLoginRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6591,7 +9509,7 @@ export const DeveloperPortalAuthenticationApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAuthLogout(requestParameters: DeveloperPortalAuthenticationApiDeveloperAuthLogoutRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAuthLogout(requestParameters: DeveloperPortalAuthenticationApiDeveloperAuthLogoutRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerAuthLogout(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6601,7 +9519,7 @@ export const DeveloperPortalAuthenticationApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAuthMe(requestParameters: DeveloperPortalAuthenticationApiDeveloperAuthMeRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAuthMe(requestParameters: DeveloperPortalAuthenticationApiDeveloperAuthMeRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperAuthMe200Response> {
             return localVarFp.developerAuthMe(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -6741,7 +9659,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
             if (customerReference !== undefined) {
                 localVarQueryParameter['customer_reference'] = customerReference;
@@ -6805,7 +9723,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
             if (customerReference !== undefined) {
                 localVarQueryParameter['customer_reference'] = customerReference;
@@ -6865,7 +9783,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -6920,7 +9838,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -6972,7 +9890,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -7021,7 +9939,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
             if (customerReference !== undefined) {
                 localVarQueryParameter['customer_reference'] = customerReference;
@@ -7085,7 +10003,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
             if (customerReference !== undefined) {
                 localVarQueryParameter['customer_reference'] = customerReference;
@@ -7148,7 +10066,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -7209,7 +10127,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -7264,7 +10182,7 @@ export const DeveloperPortalConsentsApiAxiosParamCreator = function (configurati
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -7301,7 +10219,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerConsentsExport(xTenantID: string, customerReference?: string, consentType?: string, status?: string, perPage?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerConsentsExport(xTenantID: string, customerReference?: string, consentType?: string, status?: string, perPage?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerConsentsExport(xTenantID, customerReference, consentType, status, perPage, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.developerConsentsExport']?.[localVarOperationServerIndex]?.url;
@@ -7317,7 +10235,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerConsentsIndex(xTenantID: string, customerReference?: string, consentType?: string, status?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerConsentsIndex(xTenantID: string, customerReference?: string, consentType?: string, status?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerConsentsIndex(xTenantID, customerReference, consentType, status, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.developerConsentsIndex']?.[localVarOperationServerIndex]?.url;
@@ -7331,7 +10249,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerConsentsRecord(xTenantID: string, recordConsentRequest: RecordConsentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerConsentsRecord(xTenantID: string, recordConsentRequest: RecordConsentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerConsentsRecord(xTenantID, recordConsentRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.developerConsentsRecord']?.[localVarOperationServerIndex]?.url;
@@ -7346,7 +10264,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerConsentsRevoke(id: string, xTenantID: string, revokeConsentRequest: RevokeConsentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerConsentsRevoke(id: string, xTenantID: string, revokeConsentRequest: RevokeConsentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerConsentsRevoke(id, xTenantID, revokeConsentRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.developerConsentsRevoke']?.[localVarOperationServerIndex]?.url;
@@ -7360,7 +10278,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerConsentsShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerConsentsShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerConsentsShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.developerConsentsShow']?.[localVarOperationServerIndex]?.url;
@@ -7377,7 +10295,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerConsentExport(xTenantID: string, customerReference?: string, consentType?: string, status?: string, perPage?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerConsentExport(xTenantID: string, customerReference?: string, consentType?: string, status?: string, perPage?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerConsentExport(xTenantID, customerReference, consentType, status, perPage, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.partnerConsentExport']?.[localVarOperationServerIndex]?.url;
@@ -7393,7 +10311,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerConsentIndex(xTenantID: string, customerReference?: string, consentType?: string, status?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerConsentIndex(xTenantID: string, customerReference?: string, consentType?: string, status?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerConsentIndex(xTenantID, customerReference, consentType, status, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.partnerConsentIndex']?.[localVarOperationServerIndex]?.url;
@@ -7408,7 +10326,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerConsentRecord(xTenantID: string, idempotencyKey: string, recordConsentRequest: RecordConsentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerConsentRecord(xTenantID: string, idempotencyKey: string, recordConsentRequest: RecordConsentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerConsentRecord(xTenantID, idempotencyKey, recordConsentRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.partnerConsentRecord']?.[localVarOperationServerIndex]?.url;
@@ -7424,7 +10342,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerConsentRevoke(id: string, xTenantID: string, idempotencyKey: string, revokeConsentRequest: RevokeConsentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerConsentRevoke(id: string, xTenantID: string, idempotencyKey: string, revokeConsentRequest: RevokeConsentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerConsentRevoke(id, xTenantID, idempotencyKey, revokeConsentRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.partnerConsentRevoke']?.[localVarOperationServerIndex]?.url;
@@ -7438,7 +10356,7 @@ export const DeveloperPortalConsentsApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partnerConsentShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async partnerConsentShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerConsentIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.partnerConsentShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalConsentsApi.partnerConsentShow']?.[localVarOperationServerIndex]?.url;
@@ -7461,7 +10379,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerConsentsExport(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsExportRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerConsentsExport(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsExportRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.developerConsentsExport(requestParameters.xTenantID, requestParameters.customerReference, requestParameters.consentType, requestParameters.status, requestParameters.perPage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7471,7 +10389,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerConsentsIndex(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerConsentsIndex(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.developerConsentsIndex(requestParameters.xTenantID, requestParameters.customerReference, requestParameters.consentType, requestParameters.status, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7481,7 +10399,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerConsentsRecord(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsRecordRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerConsentsRecord(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsRecordRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.developerConsentsRecord(requestParameters.xTenantID, requestParameters.recordConsentRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7491,7 +10409,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerConsentsRevoke(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsRevokeRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerConsentsRevoke(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsRevokeRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.developerConsentsRevoke(requestParameters.id, requestParameters.xTenantID, requestParameters.revokeConsentRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7501,7 +10419,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerConsentsShow(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerConsentsShow(requestParameters: DeveloperPortalConsentsApiDeveloperConsentsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.developerConsentsShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7511,7 +10429,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerConsentExport(requestParameters: DeveloperPortalConsentsApiPartnerConsentExportRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerConsentExport(requestParameters: DeveloperPortalConsentsApiPartnerConsentExportRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.partnerConsentExport(requestParameters.xTenantID, requestParameters.customerReference, requestParameters.consentType, requestParameters.status, requestParameters.perPage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7521,7 +10439,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerConsentIndex(requestParameters: DeveloperPortalConsentsApiPartnerConsentIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerConsentIndex(requestParameters: DeveloperPortalConsentsApiPartnerConsentIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.partnerConsentIndex(requestParameters.xTenantID, requestParameters.customerReference, requestParameters.consentType, requestParameters.status, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7531,7 +10449,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerConsentRecord(requestParameters: DeveloperPortalConsentsApiPartnerConsentRecordRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerConsentRecord(requestParameters: DeveloperPortalConsentsApiPartnerConsentRecordRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.partnerConsentRecord(requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.recordConsentRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7541,7 +10459,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerConsentRevoke(requestParameters: DeveloperPortalConsentsApiPartnerConsentRevokeRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerConsentRevoke(requestParameters: DeveloperPortalConsentsApiPartnerConsentRevokeRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.partnerConsentRevoke(requestParameters.id, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.revokeConsentRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -7551,7 +10469,7 @@ export const DeveloperPortalConsentsApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partnerConsentShow(requestParameters: DeveloperPortalConsentsApiPartnerConsentShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        partnerConsentShow(requestParameters: DeveloperPortalConsentsApiPartnerConsentShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerConsentIndex200Response> {
             return localVarFp.partnerConsentShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -8033,7 +10951,7 @@ export const DeveloperPortalKYBApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8084,7 +11002,7 @@ export const DeveloperPortalKYBApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8135,7 +11053,7 @@ export const DeveloperPortalKYBApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8187,7 +11105,7 @@ export const DeveloperPortalKYBApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8239,7 +11157,7 @@ export const DeveloperPortalKYBApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8287,7 +11205,7 @@ export const DeveloperPortalKYBApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8332,7 +11250,7 @@ export const DeveloperPortalKYBApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8366,7 +11284,7 @@ export const DeveloperPortalKYBApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerKybBusiness(xTenantID: string, updateKybBusinessRequest: UpdateKybBusinessRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerKybBusiness(xTenantID: string, updateKybBusinessRequest: UpdateKybBusinessRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperKybShow200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerKybBusiness(xTenantID, updateKybBusinessRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalKYBApi.developerKybBusiness']?.[localVarOperationServerIndex]?.url;
@@ -8380,7 +11298,7 @@ export const DeveloperPortalKYBApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerKybDocumentsUpload(xTenantID: string, uploadKybDocumentRequest: UploadKybDocumentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerKybDocumentsUpload(xTenantID: string, uploadKybDocumentRequest: UploadKybDocumentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerKybDocumentsUpload(xTenantID, uploadKybDocumentRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalKYBApi.developerKybDocumentsUpload']?.[localVarOperationServerIndex]?.url;
@@ -8394,7 +11312,7 @@ export const DeveloperPortalKYBApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerKybOfficersAdd(xTenantID: string, addKybOfficerRequest: AddKybOfficerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerKybOfficersAdd(xTenantID: string, addKybOfficerRequest: AddKybOfficerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperKybOfficersAdd201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerKybOfficersAdd(xTenantID, addKybOfficerRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalKYBApi.developerKybOfficersAdd']?.[localVarOperationServerIndex]?.url;
@@ -8408,7 +11326,7 @@ export const DeveloperPortalKYBApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerKybOfficersRemove(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerKybOfficersRemove(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerKybOfficersRemove(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalKYBApi.developerKybOfficersRemove']?.[localVarOperationServerIndex]?.url;
@@ -8423,7 +11341,7 @@ export const DeveloperPortalKYBApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerKybOfficersUpdate(id: string, xTenantID: string, updateKybOfficerRequest: UpdateKybOfficerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerKybOfficersUpdate(id: string, xTenantID: string, updateKybOfficerRequest: UpdateKybOfficerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperKybOfficersAdd201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerKybOfficersUpdate(id, xTenantID, updateKybOfficerRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalKYBApi.developerKybOfficersUpdate']?.[localVarOperationServerIndex]?.url;
@@ -8436,7 +11354,7 @@ export const DeveloperPortalKYBApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerKybShow(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerKybShow(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperKybShow200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerKybShow(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalKYBApi.developerKybShow']?.[localVarOperationServerIndex]?.url;
@@ -8449,7 +11367,7 @@ export const DeveloperPortalKYBApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerKybSubmit(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerKybSubmit(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperKybShow200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerKybSubmit(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalKYBApi.developerKybSubmit']?.[localVarOperationServerIndex]?.url;
@@ -8472,7 +11390,7 @@ export const DeveloperPortalKYBApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerKybBusiness(requestParameters: DeveloperPortalKYBApiDeveloperKybBusinessRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerKybBusiness(requestParameters: DeveloperPortalKYBApiDeveloperKybBusinessRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperKybShow200Response> {
             return localVarFp.developerKybBusiness(requestParameters.xTenantID, requestParameters.updateKybBusinessRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8482,7 +11400,7 @@ export const DeveloperPortalKYBApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerKybDocumentsUpload(requestParameters: DeveloperPortalKYBApiDeveloperKybDocumentsUploadRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerKybDocumentsUpload(requestParameters: DeveloperPortalKYBApiDeveloperKybDocumentsUploadRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerKybDocumentsUpload(requestParameters.xTenantID, requestParameters.uploadKybDocumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8492,7 +11410,7 @@ export const DeveloperPortalKYBApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerKybOfficersAdd(requestParameters: DeveloperPortalKYBApiDeveloperKybOfficersAddRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerKybOfficersAdd(requestParameters: DeveloperPortalKYBApiDeveloperKybOfficersAddRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperKybOfficersAdd201Response> {
             return localVarFp.developerKybOfficersAdd(requestParameters.xTenantID, requestParameters.addKybOfficerRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8502,7 +11420,7 @@ export const DeveloperPortalKYBApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerKybOfficersRemove(requestParameters: DeveloperPortalKYBApiDeveloperKybOfficersRemoveRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerKybOfficersRemove(requestParameters: DeveloperPortalKYBApiDeveloperKybOfficersRemoveRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerKybOfficersRemove(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8512,7 +11430,7 @@ export const DeveloperPortalKYBApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerKybOfficersUpdate(requestParameters: DeveloperPortalKYBApiDeveloperKybOfficersUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerKybOfficersUpdate(requestParameters: DeveloperPortalKYBApiDeveloperKybOfficersUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperKybOfficersAdd201Response> {
             return localVarFp.developerKybOfficersUpdate(requestParameters.id, requestParameters.xTenantID, requestParameters.updateKybOfficerRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8522,7 +11440,7 @@ export const DeveloperPortalKYBApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerKybShow(requestParameters: DeveloperPortalKYBApiDeveloperKybShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerKybShow(requestParameters: DeveloperPortalKYBApiDeveloperKybShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperKybShow200Response> {
             return localVarFp.developerKybShow(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -8532,7 +11450,7 @@ export const DeveloperPortalKYBApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerKybSubmit(requestParameters: DeveloperPortalKYBApiDeveloperKybSubmitRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerKybSubmit(requestParameters: DeveloperPortalKYBApiDeveloperKybSubmitRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperKybShow200Response> {
             return localVarFp.developerKybSubmit(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -8807,7 +11725,7 @@ export const DeveloperPortalMFAApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8852,7 +11770,7 @@ export const DeveloperPortalMFAApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8900,7 +11818,7 @@ export const DeveloperPortalMFAApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8951,7 +11869,7 @@ export const DeveloperPortalMFAApiAxiosParamCreator = function (configuration?: 
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -8987,7 +11905,7 @@ export const DeveloperPortalMFAApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAuthMfaSetup(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAuthMfaSetup(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAuthMfaSetup(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalMFAApi.developerAuthMfaSetup']?.[localVarOperationServerIndex]?.url;
@@ -9000,7 +11918,7 @@ export const DeveloperPortalMFAApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAuthMfaStatus(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAuthMfaStatus(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAuthMfaStatus(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalMFAApi.developerAuthMfaStatus']?.[localVarOperationServerIndex]?.url;
@@ -9014,7 +11932,7 @@ export const DeveloperPortalMFAApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAuthMfaVerify(xTenantID: string, developerVerifyMfaRequest: DeveloperVerifyMfaRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAuthMfaVerify(xTenantID: string, developerVerifyMfaRequest: DeveloperVerifyMfaRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAuthMfaVerify(xTenantID, developerVerifyMfaRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalMFAApi.developerAuthMfaVerify']?.[localVarOperationServerIndex]?.url;
@@ -9028,7 +11946,7 @@ export const DeveloperPortalMFAApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAuthMfaVerifySetup(xTenantID: string, developerVerifyMfaRequest: DeveloperVerifyMfaRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAuthMfaVerifySetup(xTenantID: string, developerVerifyMfaRequest: DeveloperVerifyMfaRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAuthMfaVerifySetup(xTenantID, developerVerifyMfaRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalMFAApi.developerAuthMfaVerifySetup']?.[localVarOperationServerIndex]?.url;
@@ -9051,7 +11969,7 @@ export const DeveloperPortalMFAApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAuthMfaSetup(requestParameters: DeveloperPortalMFAApiDeveloperAuthMfaSetupRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAuthMfaSetup(requestParameters: DeveloperPortalMFAApiDeveloperAuthMfaSetupRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerAuthMfaSetup(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -9061,7 +11979,7 @@ export const DeveloperPortalMFAApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAuthMfaStatus(requestParameters: DeveloperPortalMFAApiDeveloperAuthMfaStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAuthMfaStatus(requestParameters: DeveloperPortalMFAApiDeveloperAuthMfaStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerAuthMfaStatus(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -9071,7 +11989,7 @@ export const DeveloperPortalMFAApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAuthMfaVerify(requestParameters: DeveloperPortalMFAApiDeveloperAuthMfaVerifyRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAuthMfaVerify(requestParameters: DeveloperPortalMFAApiDeveloperAuthMfaVerifyRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerAuthMfaVerify(requestParameters.xTenantID, requestParameters.developerVerifyMfaRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -9081,7 +11999,7 @@ export const DeveloperPortalMFAApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAuthMfaVerifySetup(requestParameters: DeveloperPortalMFAApiDeveloperAuthMfaVerifySetupRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAuthMfaVerifySetup(requestParameters: DeveloperPortalMFAApiDeveloperAuthMfaVerifySetupRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerAuthMfaVerifySetup(requestParameters.xTenantID, requestParameters.developerVerifyMfaRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -9250,7 +12168,7 @@ export const DeveloperPortalManagedAccountsApiAxiosParamCreator = function (conf
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -9299,7 +12217,7 @@ export const DeveloperPortalManagedAccountsApiAxiosParamCreator = function (conf
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -9351,7 +12269,7 @@ export const DeveloperPortalManagedAccountsApiAxiosParamCreator = function (conf
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -9403,7 +12321,7 @@ export const DeveloperPortalManagedAccountsApiAxiosParamCreator = function (conf
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -9458,7 +12376,7 @@ export const DeveloperPortalManagedAccountsApiAxiosParamCreator = function (conf
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -9497,7 +12415,7 @@ export const DeveloperPortalManagedAccountsApiFp = function(configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAccountsIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAccountsIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedAccountIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAccountsIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedAccountsApi.developerAccountsIndex']?.[localVarOperationServerIndex]?.url;
@@ -9511,7 +12429,7 @@ export const DeveloperPortalManagedAccountsApiFp = function(configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsIndex(customerId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsIndex(customerId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedAccountIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsIndex(customerId, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedAccountsApi.developerCustomersAccountsIndex']?.[localVarOperationServerIndex]?.url;
@@ -9526,7 +12444,7 @@ export const DeveloperPortalManagedAccountsApiFp = function(configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsStore(customerId: string, xTenantID: string, openManagedAccountRequest: OpenManagedAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsStore(customerId: string, xTenantID: string, openManagedAccountRequest: OpenManagedAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedAccountIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsStore(customerId, xTenantID, openManagedAccountRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedAccountsApi.developerCustomersAccountsStore']?.[localVarOperationServerIndex]?.url;
@@ -9540,7 +12458,7 @@ export const DeveloperPortalManagedAccountsApiFp = function(configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedAccountIndex(customerId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedAccountIndex(customerId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedAccountIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedAccountIndex(customerId, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedAccountsApi.managedAccountIndex']?.[localVarOperationServerIndex]?.url;
@@ -9556,7 +12474,7 @@ export const DeveloperPortalManagedAccountsApiFp = function(configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedAccountStore(customerId: string, xTenantID: string, idempotencyKey: string, openManagedAccountRequest: OpenManagedAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedAccountStore(customerId: string, xTenantID: string, idempotencyKey: string, openManagedAccountRequest: OpenManagedAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedAccountIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedAccountStore(customerId, xTenantID, idempotencyKey, openManagedAccountRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedAccountsApi.managedAccountStore']?.[localVarOperationServerIndex]?.url;
@@ -9579,7 +12497,7 @@ export const DeveloperPortalManagedAccountsApiFactory = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAccountsIndex(requestParameters: DeveloperPortalManagedAccountsApiDeveloperAccountsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAccountsIndex(requestParameters: DeveloperPortalManagedAccountsApiDeveloperAccountsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedAccountIndex200Response> {
             return localVarFp.developerAccountsIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -9589,7 +12507,7 @@ export const DeveloperPortalManagedAccountsApiFactory = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsIndex(requestParameters: DeveloperPortalManagedAccountsApiDeveloperCustomersAccountsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsIndex(requestParameters: DeveloperPortalManagedAccountsApiDeveloperCustomersAccountsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedAccountIndex200Response> {
             return localVarFp.developerCustomersAccountsIndex(requestParameters.customerId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -9599,7 +12517,7 @@ export const DeveloperPortalManagedAccountsApiFactory = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsStore(requestParameters: DeveloperPortalManagedAccountsApiDeveloperCustomersAccountsStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsStore(requestParameters: DeveloperPortalManagedAccountsApiDeveloperCustomersAccountsStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedAccountIndex200Response> {
             return localVarFp.developerCustomersAccountsStore(requestParameters.customerId, requestParameters.xTenantID, requestParameters.openManagedAccountRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -9609,7 +12527,7 @@ export const DeveloperPortalManagedAccountsApiFactory = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedAccountIndex(requestParameters: DeveloperPortalManagedAccountsApiManagedAccountIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedAccountIndex(requestParameters: DeveloperPortalManagedAccountsApiManagedAccountIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedAccountIndex200Response> {
             return localVarFp.managedAccountIndex(requestParameters.customerId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -9619,7 +12537,7 @@ export const DeveloperPortalManagedAccountsApiFactory = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedAccountStore(requestParameters: DeveloperPortalManagedAccountsApiManagedAccountStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedAccountStore(requestParameters: DeveloperPortalManagedAccountsApiManagedAccountStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedAccountIndex200Response> {
             return localVarFp.managedAccountStore(requestParameters.customerId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.openManagedAccountRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -9864,7 +12782,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -9920,7 +12838,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -9979,7 +12897,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10048,7 +12966,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10117,7 +13035,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10180,7 +13098,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10243,7 +13161,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10308,7 +13226,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
             if (perPage !== undefined) {
                 localVarQueryParameter['per_page'] = perPage;
@@ -10376,7 +13294,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10438,7 +13356,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10504,7 +13422,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10570,7 +13488,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10639,7 +13557,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10708,7 +13626,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10774,7 +13692,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10830,7 +13748,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10887,7 +13805,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -10946,7 +13864,7 @@ export const DeveloperPortalManagedCardsApiAxiosParamCreator = function (configu
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
             if (perPage !== undefined) {
                 localVarQueryParameter['per_page'] = perPage;
@@ -10991,7 +13909,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsFreeze(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsFreeze(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsFreeze(customerId, accountId, cardId, xTenantID, idempotencyKey, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsFreeze']?.[localVarOperationServerIndex]?.url;
@@ -11006,7 +13924,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsIndex(customerId: string, accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsIndex(customerId: string, accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsIndex(customerId, accountId, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsIndex']?.[localVarOperationServerIndex]?.url;
@@ -11023,7 +13941,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsIssue(customerId: string, accountId: string, xTenantID: string, idempotencyKey: string, issueManagedCardRequest: IssueManagedCardRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsIssue(customerId: string, accountId: string, xTenantID: string, idempotencyKey: string, issueManagedCardRequest: IssueManagedCardRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsIssue(customerId, accountId, xTenantID, idempotencyKey, issueManagedCardRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsIssue']?.[localVarOperationServerIndex]?.url;
@@ -11041,7 +13959,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsLimits(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, setManagedCardLimitsRequest: SetManagedCardLimitsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsLimits(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, setManagedCardLimitsRequest: SetManagedCardLimitsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsLimits(customerId, accountId, cardId, xTenantID, idempotencyKey, setManagedCardLimitsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsLimits']?.[localVarOperationServerIndex]?.url;
@@ -11059,7 +13977,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsPin(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, setManagedCardPinRequest: SetManagedCardPinRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsPin(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, setManagedCardPinRequest: SetManagedCardPinRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsPin(customerId, accountId, cardId, xTenantID, idempotencyKey, setManagedCardPinRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsPin']?.[localVarOperationServerIndex]?.url;
@@ -11075,7 +13993,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsShow(customerId: string, accountId: string, cardId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsShow(customerId: string, accountId: string, cardId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsShow(customerId, accountId, cardId, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsShow']?.[localVarOperationServerIndex]?.url;
@@ -11093,7 +14011,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsTerminate(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, terminateManagedCardRequest: TerminateManagedCardRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsTerminate(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, terminateManagedCardRequest: TerminateManagedCardRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsTerminate(customerId, accountId, cardId, xTenantID, idempotencyKey, terminateManagedCardRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsTerminate']?.[localVarOperationServerIndex]?.url;
@@ -11111,7 +14029,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsTransactions(customerId: string, accountId: string, cardId: string, xTenantID: string, perPage?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsTransactions(customerId: string, accountId: string, cardId: string, xTenantID: string, perPage?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadTransactions200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsTransactions(customerId, accountId, cardId, xTenantID, perPage, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsTransactions']?.[localVarOperationServerIndex]?.url;
@@ -11128,7 +14046,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersAccountsCardsUnfreeze(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersAccountsCardsUnfreeze(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersAccountsCardsUnfreeze(customerId, accountId, cardId, xTenantID, idempotencyKey, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.developerCustomersAccountsCardsUnfreeze']?.[localVarOperationServerIndex]?.url;
@@ -11145,7 +14063,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardIssue(customerId: string, accountId: string, xTenantID: string, idempotencyKey: string, issueManagedCardRequest: IssueManagedCardRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardIssue(customerId: string, accountId: string, xTenantID: string, idempotencyKey: string, issueManagedCardRequest: IssueManagedCardRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardIssue(customerId, accountId, xTenantID, idempotencyKey, issueManagedCardRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardIssue']?.[localVarOperationServerIndex]?.url;
@@ -11162,7 +14080,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardLifecycleFreeze(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardLifecycleFreeze(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardLifecycleFreeze(customerId, accountId, cardId, xTenantID, idempotencyKey, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardLifecycleFreeze']?.[localVarOperationServerIndex]?.url;
@@ -11180,7 +14098,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardLifecycleSetLimits(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, setManagedCardLimitsRequest: SetManagedCardLimitsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardLifecycleSetLimits(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, setManagedCardLimitsRequest: SetManagedCardLimitsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardLifecycleSetLimits(customerId, accountId, cardId, xTenantID, idempotencyKey, setManagedCardLimitsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardLifecycleSetLimits']?.[localVarOperationServerIndex]?.url;
@@ -11198,7 +14116,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardLifecycleSetPin(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, setManagedCardPinRequest: SetManagedCardPinRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardLifecycleSetPin(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, setManagedCardPinRequest: SetManagedCardPinRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardLifecycleSetPin(customerId, accountId, cardId, xTenantID, idempotencyKey, setManagedCardPinRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardLifecycleSetPin']?.[localVarOperationServerIndex]?.url;
@@ -11216,7 +14134,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardLifecycleTerminate(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, terminateManagedCardRequest: TerminateManagedCardRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardLifecycleTerminate(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, terminateManagedCardRequest: TerminateManagedCardRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardLifecycleTerminate(customerId, accountId, cardId, xTenantID, idempotencyKey, terminateManagedCardRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardLifecycleTerminate']?.[localVarOperationServerIndex]?.url;
@@ -11233,7 +14151,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardLifecycleUnfreeze(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardLifecycleUnfreeze(customerId: string, accountId: string, cardId: string, xTenantID: string, idempotencyKey: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardLifecycleUnfreeze(customerId, accountId, cardId, xTenantID, idempotencyKey, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardLifecycleUnfreeze']?.[localVarOperationServerIndex]?.url;
@@ -11248,7 +14166,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardReadIndex(customerId: string, accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardReadIndex(customerId: string, accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardReadIndex(customerId, accountId, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardReadIndex']?.[localVarOperationServerIndex]?.url;
@@ -11264,7 +14182,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardReadShow(customerId: string, accountId: string, cardId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardReadShow(customerId: string, accountId: string, cardId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardReadShow(customerId, accountId, cardId, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardReadShow']?.[localVarOperationServerIndex]?.url;
@@ -11282,7 +14200,7 @@ export const DeveloperPortalManagedCardsApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCardReadTransactions(customerId: string, accountId: string, cardId: string, xTenantID: string, perPage?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCardReadTransactions(customerId: string, accountId: string, cardId: string, xTenantID: string, perPage?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCardReadTransactions200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCardReadTransactions(customerId, accountId, cardId, xTenantID, perPage, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCardsApi.managedCardReadTransactions']?.[localVarOperationServerIndex]?.url;
@@ -11305,7 +14223,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsFreeze(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsFreezeRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsFreeze(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsFreezeRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.developerCustomersAccountsCardsFreeze(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11315,7 +14233,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsIndex(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsIndex(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.developerCustomersAccountsCardsIndex(requestParameters.customerId, requestParameters.accountId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11325,7 +14243,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsIssue(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsIssueRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsIssue(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsIssueRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.developerCustomersAccountsCardsIssue(requestParameters.customerId, requestParameters.accountId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.issueManagedCardRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11335,7 +14253,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsLimits(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsLimitsRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsLimits(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsLimitsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.developerCustomersAccountsCardsLimits(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.setManagedCardLimitsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11345,7 +14263,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsPin(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsPinRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsPin(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsPinRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.developerCustomersAccountsCardsPin(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.setManagedCardPinRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11355,7 +14273,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsShow(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsShow(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.developerCustomersAccountsCardsShow(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11365,7 +14283,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsTerminate(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsTerminateRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsTerminate(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsTerminateRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.developerCustomersAccountsCardsTerminate(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.terminateManagedCardRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11375,7 +14293,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsTransactions(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsTransactions(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadTransactions200Response> {
             return localVarFp.developerCustomersAccountsCardsTransactions(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.perPage, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11385,7 +14303,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersAccountsCardsUnfreeze(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsUnfreezeRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersAccountsCardsUnfreeze(requestParameters: DeveloperPortalManagedCardsApiDeveloperCustomersAccountsCardsUnfreezeRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.developerCustomersAccountsCardsUnfreeze(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11395,7 +14313,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardIssue(requestParameters: DeveloperPortalManagedCardsApiManagedCardIssueRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardIssue(requestParameters: DeveloperPortalManagedCardsApiManagedCardIssueRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.managedCardIssue(requestParameters.customerId, requestParameters.accountId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.issueManagedCardRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11405,7 +14323,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardLifecycleFreeze(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleFreezeRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardLifecycleFreeze(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleFreezeRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.managedCardLifecycleFreeze(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11415,7 +14333,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardLifecycleSetLimits(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleSetLimitsRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardLifecycleSetLimits(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleSetLimitsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.managedCardLifecycleSetLimits(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.setManagedCardLimitsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11425,7 +14343,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardLifecycleSetPin(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleSetPinRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardLifecycleSetPin(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleSetPinRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.managedCardLifecycleSetPin(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.setManagedCardPinRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11435,7 +14353,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardLifecycleTerminate(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleTerminateRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardLifecycleTerminate(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleTerminateRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.managedCardLifecycleTerminate(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.terminateManagedCardRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11445,7 +14363,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardLifecycleUnfreeze(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleUnfreezeRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardLifecycleUnfreeze(requestParameters: DeveloperPortalManagedCardsApiManagedCardLifecycleUnfreezeRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.managedCardLifecycleUnfreeze(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.idempotencyKey, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11455,7 +14373,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardReadIndex(requestParameters: DeveloperPortalManagedCardsApiManagedCardReadIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardReadIndex(requestParameters: DeveloperPortalManagedCardsApiManagedCardReadIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.managedCardReadIndex(requestParameters.customerId, requestParameters.accountId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11465,7 +14383,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardReadShow(requestParameters: DeveloperPortalManagedCardsApiManagedCardReadShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardReadShow(requestParameters: DeveloperPortalManagedCardsApiManagedCardReadShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadIndex200Response> {
             return localVarFp.managedCardReadShow(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -11475,7 +14393,7 @@ export const DeveloperPortalManagedCardsApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCardReadTransactions(requestParameters: DeveloperPortalManagedCardsApiManagedCardReadTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCardReadTransactions(requestParameters: DeveloperPortalManagedCardsApiManagedCardReadTransactionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCardReadTransactions200Response> {
             return localVarFp.managedCardReadTransactions(requestParameters.customerId, requestParameters.accountId, requestParameters.cardId, requestParameters.xTenantID, requestParameters.perPage, requestParameters.page, options).then((request) => request(axios, basePath));
         },
     };
@@ -12513,7 +15431,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
             if (perPage !== undefined) {
                 localVarQueryParameter['per_page'] = perPage;
@@ -12569,7 +15487,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -12624,7 +15542,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -12676,7 +15594,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -12724,7 +15642,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -12779,7 +15697,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -12828,7 +15746,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
             if (perPage !== undefined) {
                 localVarQueryParameter['per_page'] = perPage;
@@ -12887,7 +15805,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -12948,7 +15866,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -13009,7 +15927,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -13064,7 +15982,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -13115,7 +16033,7 @@ export const DeveloperPortalManagedCustomersApiAxiosParamCreator = function (con
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -13155,7 +16073,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersIndex(xTenantID: string, perPage?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersIndex(xTenantID: string, perPage?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersIndex(xTenantID, perPage, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.developerCustomersIndex']?.[localVarOperationServerIndex]?.url;
@@ -13170,7 +16088,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersOffboard(customerId: string, xTenantID: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersOffboard(customerId: string, xTenantID: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersOffboard(customerId, xTenantID, managedCustomerLifecycleRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.developerCustomersOffboard']?.[localVarOperationServerIndex]?.url;
@@ -13185,7 +16103,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersReactivate(customerId: string, xTenantID: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersReactivate(customerId: string, xTenantID: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersReactivate(customerId, xTenantID, managedCustomerLifecycleRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.developerCustomersReactivate']?.[localVarOperationServerIndex]?.url;
@@ -13199,7 +16117,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.developerCustomersShow']?.[localVarOperationServerIndex]?.url;
@@ -13213,7 +16131,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersStore(xTenantID: string, onboardManagedCustomerRequest: OnboardManagedCustomerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersStore(xTenantID: string, onboardManagedCustomerRequest: OnboardManagedCustomerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersStore(xTenantID, onboardManagedCustomerRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.developerCustomersStore']?.[localVarOperationServerIndex]?.url;
@@ -13228,7 +16146,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerCustomersSuspend(customerId: string, xTenantID: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerCustomersSuspend(customerId: string, xTenantID: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerCustomersSuspend(customerId, xTenantID, managedCustomerLifecycleRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.developerCustomersSuspend']?.[localVarOperationServerIndex]?.url;
@@ -13242,7 +16160,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCustomerIndex(xTenantID: string, perPage?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCustomerIndex(xTenantID: string, perPage?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCustomerIndex(xTenantID, perPage, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.managedCustomerIndex']?.[localVarOperationServerIndex]?.url;
@@ -13258,7 +16176,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCustomerLifecycleOffboard(customerId: string, xTenantID: string, idempotencyKey: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCustomerLifecycleOffboard(customerId: string, xTenantID: string, idempotencyKey: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCustomerLifecycleOffboard(customerId, xTenantID, idempotencyKey, managedCustomerLifecycleRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.managedCustomerLifecycleOffboard']?.[localVarOperationServerIndex]?.url;
@@ -13274,7 +16192,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCustomerLifecycleReactivate(customerId: string, xTenantID: string, idempotencyKey: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCustomerLifecycleReactivate(customerId: string, xTenantID: string, idempotencyKey: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCustomerLifecycleReactivate(customerId, xTenantID, idempotencyKey, managedCustomerLifecycleRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.managedCustomerLifecycleReactivate']?.[localVarOperationServerIndex]?.url;
@@ -13290,7 +16208,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCustomerLifecycleSuspend(customerId: string, xTenantID: string, idempotencyKey: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCustomerLifecycleSuspend(customerId: string, xTenantID: string, idempotencyKey: string, managedCustomerLifecycleRequest: ManagedCustomerLifecycleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCustomerLifecycleSuspend(customerId, xTenantID, idempotencyKey, managedCustomerLifecycleRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.managedCustomerLifecycleSuspend']?.[localVarOperationServerIndex]?.url;
@@ -13304,7 +16222,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCustomerShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCustomerShow(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCustomerShow(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.managedCustomerShow']?.[localVarOperationServerIndex]?.url;
@@ -13319,7 +16237,7 @@ export const DeveloperPortalManagedCustomersApiFp = function(configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCustomerStore(xTenantID: string, idempotencyKey: string, onboardManagedCustomerRequest: OnboardManagedCustomerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCustomerStore(xTenantID: string, idempotencyKey: string, onboardManagedCustomerRequest: OnboardManagedCustomerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCustomerStore(xTenantID, idempotencyKey, onboardManagedCustomerRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedCustomersApi.managedCustomerStore']?.[localVarOperationServerIndex]?.url;
@@ -13342,7 +16260,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersIndex(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersIndex(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.developerCustomersIndex(requestParameters.xTenantID, requestParameters.perPage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13352,7 +16270,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersOffboard(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersOffboardRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersOffboard(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersOffboardRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.developerCustomersOffboard(requestParameters.customerId, requestParameters.xTenantID, requestParameters.managedCustomerLifecycleRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13362,7 +16280,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersReactivate(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersReactivateRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersReactivate(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersReactivateRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.developerCustomersReactivate(requestParameters.customerId, requestParameters.xTenantID, requestParameters.managedCustomerLifecycleRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13372,7 +16290,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersShow(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersShow(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.developerCustomersShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13382,7 +16300,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersStore(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersStore(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.developerCustomersStore(requestParameters.xTenantID, requestParameters.onboardManagedCustomerRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13392,7 +16310,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerCustomersSuspend(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersSuspendRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerCustomersSuspend(requestParameters: DeveloperPortalManagedCustomersApiDeveloperCustomersSuspendRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.developerCustomersSuspend(requestParameters.customerId, requestParameters.xTenantID, requestParameters.managedCustomerLifecycleRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13402,7 +16320,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCustomerIndex(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCustomerIndex(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.managedCustomerIndex(requestParameters.xTenantID, requestParameters.perPage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13412,7 +16330,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCustomerLifecycleOffboard(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerLifecycleOffboardRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCustomerLifecycleOffboard(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerLifecycleOffboardRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.managedCustomerLifecycleOffboard(requestParameters.customerId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.managedCustomerLifecycleRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13422,7 +16340,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCustomerLifecycleReactivate(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerLifecycleReactivateRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCustomerLifecycleReactivate(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerLifecycleReactivateRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.managedCustomerLifecycleReactivate(requestParameters.customerId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.managedCustomerLifecycleRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13432,7 +16350,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCustomerLifecycleSuspend(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerLifecycleSuspendRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCustomerLifecycleSuspend(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerLifecycleSuspendRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.managedCustomerLifecycleSuspend(requestParameters.customerId, requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.managedCustomerLifecycleRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13442,7 +16360,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCustomerShow(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCustomerShow(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.managedCustomerShow(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13452,7 +16370,7 @@ export const DeveloperPortalManagedCustomersApiFactory = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCustomerStore(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCustomerStore(requestParameters: DeveloperPortalManagedCustomersApiManagedCustomerStoreRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerIndex200Response> {
             return localVarFp.managedCustomerStore(requestParameters.xTenantID, requestParameters.idempotencyKey, requestParameters.onboardManagedCustomerRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -13973,7 +16891,7 @@ export const DeveloperPortalManagedStatementsApiAxiosParamCreator = function (co
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -14022,7 +16940,7 @@ export const DeveloperPortalManagedStatementsApiAxiosParamCreator = function (co
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -14056,7 +16974,7 @@ export const DeveloperPortalManagedStatementsApiFp = function(configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerAccountsStatement(accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerAccountsStatement(accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerStatementShow200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerAccountsStatement(accountId, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedStatementsApi.developerAccountsStatement']?.[localVarOperationServerIndex]?.url;
@@ -14070,7 +16988,7 @@ export const DeveloperPortalManagedStatementsApiFp = function(configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async managedCustomerStatementShow(accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async managedCustomerStatementShow(accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedCustomerStatementShow200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.managedCustomerStatementShow(accountId, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedStatementsApi.managedCustomerStatementShow']?.[localVarOperationServerIndex]?.url;
@@ -14093,7 +17011,7 @@ export const DeveloperPortalManagedStatementsApiFactory = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerAccountsStatement(requestParameters: DeveloperPortalManagedStatementsApiDeveloperAccountsStatementRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerAccountsStatement(requestParameters: DeveloperPortalManagedStatementsApiDeveloperAccountsStatementRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerStatementShow200Response> {
             return localVarFp.developerAccountsStatement(requestParameters.accountId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -14103,7 +17021,7 @@ export const DeveloperPortalManagedStatementsApiFactory = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        managedCustomerStatementShow(requestParameters: DeveloperPortalManagedStatementsApiManagedCustomerStatementShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        managedCustomerStatementShow(requestParameters: DeveloperPortalManagedStatementsApiManagedCustomerStatementShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedCustomerStatementShow200Response> {
             return localVarFp.managedCustomerStatementShow(requestParameters.accountId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -14293,7 +17211,7 @@ export const DeveloperPortalRegistrationApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerRegistrationRegister(xTenantID: string, registerDeveloperRequest: RegisterDeveloperRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerRegistrationRegister(xTenantID: string, registerDeveloperRequest: RegisterDeveloperRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperRegistrationRegister201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerRegistrationRegister(xTenantID, registerDeveloperRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalRegistrationApi.developerRegistrationRegister']?.[localVarOperationServerIndex]?.url;
@@ -14307,7 +17225,7 @@ export const DeveloperPortalRegistrationApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerRegistrationVerifyEmail(xTenantID: string, verifyDeveloperEmailRequest: VerifyDeveloperEmailRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerRegistrationVerifyEmail(xTenantID: string, verifyDeveloperEmailRequest: VerifyDeveloperEmailRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperRegistrationRegister201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerRegistrationVerifyEmail(xTenantID, verifyDeveloperEmailRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalRegistrationApi.developerRegistrationVerifyEmail']?.[localVarOperationServerIndex]?.url;
@@ -14330,7 +17248,7 @@ export const DeveloperPortalRegistrationApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerRegistrationRegister(requestParameters: DeveloperPortalRegistrationApiDeveloperRegistrationRegisterRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerRegistrationRegister(requestParameters: DeveloperPortalRegistrationApiDeveloperRegistrationRegisterRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperRegistrationRegister201Response> {
             return localVarFp.developerRegistrationRegister(requestParameters.xTenantID, requestParameters.registerDeveloperRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -14340,7 +17258,7 @@ export const DeveloperPortalRegistrationApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerRegistrationVerifyEmail(requestParameters: DeveloperPortalRegistrationApiDeveloperRegistrationVerifyEmailRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerRegistrationVerifyEmail(requestParameters: DeveloperPortalRegistrationApiDeveloperRegistrationVerifyEmailRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperRegistrationRegister201Response> {
             return localVarFp.developerRegistrationVerifyEmail(requestParameters.xTenantID, requestParameters.verifyDeveloperEmailRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -14457,7 +17375,7 @@ export const DeveloperPortalSandboxApiAxiosParamCreator = function (configuratio
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -14502,7 +17420,7 @@ export const DeveloperPortalSandboxApiAxiosParamCreator = function (configuratio
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -14547,7 +17465,7 @@ export const DeveloperPortalSandboxApiAxiosParamCreator = function (configuratio
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -14580,7 +17498,7 @@ export const DeveloperPortalSandboxApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerSandboxReset(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerSandboxReset(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperSandboxStatus200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerSandboxReset(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalSandboxApi.developerSandboxReset']?.[localVarOperationServerIndex]?.url;
@@ -14593,7 +17511,7 @@ export const DeveloperPortalSandboxApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerSandboxStatus(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerSandboxStatus(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperSandboxStatus200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerSandboxStatus(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalSandboxApi.developerSandboxStatus']?.[localVarOperationServerIndex]?.url;
@@ -14606,7 +17524,7 @@ export const DeveloperPortalSandboxApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerSandboxTestData(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerSandboxTestData(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperSandboxTestData200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerSandboxTestData(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalSandboxApi.developerSandboxTestData']?.[localVarOperationServerIndex]?.url;
@@ -14629,7 +17547,7 @@ export const DeveloperPortalSandboxApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerSandboxReset(requestParameters: DeveloperPortalSandboxApiDeveloperSandboxResetRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerSandboxReset(requestParameters: DeveloperPortalSandboxApiDeveloperSandboxResetRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperSandboxStatus200Response> {
             return localVarFp.developerSandboxReset(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -14639,7 +17557,7 @@ export const DeveloperPortalSandboxApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerSandboxStatus(requestParameters: DeveloperPortalSandboxApiDeveloperSandboxStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerSandboxStatus(requestParameters: DeveloperPortalSandboxApiDeveloperSandboxStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperSandboxStatus200Response> {
             return localVarFp.developerSandboxStatus(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -14649,7 +17567,7 @@ export const DeveloperPortalSandboxApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerSandboxTestData(requestParameters: DeveloperPortalSandboxApiDeveloperSandboxTestDataRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerSandboxTestData(requestParameters: DeveloperPortalSandboxApiDeveloperSandboxTestDataRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperSandboxTestData200Response> {
             return localVarFp.developerSandboxTestData(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -14778,7 +17696,7 @@ export const DeveloperPortalSettlementsApiAxiosParamCreator = function (configur
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -14823,7 +17741,7 @@ export const DeveloperPortalSettlementsApiAxiosParamCreator = function (configur
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -14856,7 +17774,7 @@ export const DeveloperPortalSettlementsApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerStatementsDownload(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerStatementsDownload(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerStatementsDownload(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalSettlementsApi.developerStatementsDownload']?.[localVarOperationServerIndex]?.url;
@@ -14869,7 +17787,7 @@ export const DeveloperPortalSettlementsApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerStatementsIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerStatementsIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperStatementsIndex200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerStatementsIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalSettlementsApi.developerStatementsIndex']?.[localVarOperationServerIndex]?.url;
@@ -14892,7 +17810,7 @@ export const DeveloperPortalSettlementsApiFactory = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerStatementsDownload(requestParameters: DeveloperPortalSettlementsApiDeveloperStatementsDownloadRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerStatementsDownload(requestParameters: DeveloperPortalSettlementsApiDeveloperStatementsDownloadRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerStatementsDownload(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -14902,7 +17820,7 @@ export const DeveloperPortalSettlementsApiFactory = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerStatementsIndex(requestParameters: DeveloperPortalSettlementsApiDeveloperStatementsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerStatementsIndex(requestParameters: DeveloperPortalSettlementsApiDeveloperStatementsIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperStatementsIndex200Response> {
             return localVarFp.developerStatementsIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -15047,7 +17965,7 @@ export const DeveloperPortalTeamApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -15095,7 +18013,7 @@ export const DeveloperPortalTeamApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -15147,7 +18065,7 @@ export const DeveloperPortalTeamApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -15196,7 +18114,7 @@ export const DeveloperPortalTeamApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -15248,7 +18166,7 @@ export const DeveloperPortalTeamApiAxiosParamCreator = function (configuration?:
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -15285,7 +18203,7 @@ export const DeveloperPortalTeamApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerTeamAcceptInvite(xTenantID: string, acceptInviteRequest: AcceptInviteRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerTeamAcceptInvite(xTenantID: string, acceptInviteRequest: AcceptInviteRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperTeamAcceptInvite201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerTeamAcceptInvite(xTenantID, acceptInviteRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalTeamApi.developerTeamAcceptInvite']?.[localVarOperationServerIndex]?.url;
@@ -15298,7 +18216,7 @@ export const DeveloperPortalTeamApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerTeamIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerTeamIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperTeamAcceptInvite201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerTeamIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalTeamApi.developerTeamIndex']?.[localVarOperationServerIndex]?.url;
@@ -15312,7 +18230,7 @@ export const DeveloperPortalTeamApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerTeamInvite(xTenantID: string, inviteMemberRequest: InviteMemberRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerTeamInvite(xTenantID: string, inviteMemberRequest: InviteMemberRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperTeamAcceptInvite201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerTeamInvite(xTenantID, inviteMemberRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalTeamApi.developerTeamInvite']?.[localVarOperationServerIndex]?.url;
@@ -15326,7 +18244,7 @@ export const DeveloperPortalTeamApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerTeamRemove(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerTeamRemove(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerTeamRemove(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalTeamApi.developerTeamRemove']?.[localVarOperationServerIndex]?.url;
@@ -15340,7 +18258,7 @@ export const DeveloperPortalTeamApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerTeamResendInvite(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerTeamResendInvite(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperTeamAcceptInvite201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerTeamResendInvite(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalTeamApi.developerTeamResendInvite']?.[localVarOperationServerIndex]?.url;
@@ -15355,7 +18273,7 @@ export const DeveloperPortalTeamApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async developerTeamRole(id: string, xTenantID: string, changeMemberRoleRequest: ChangeMemberRoleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async developerTeamRole(id: string, xTenantID: string, changeMemberRoleRequest: ChangeMemberRoleRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeveloperTeamAcceptInvite201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.developerTeamRole(id, xTenantID, changeMemberRoleRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalTeamApi.developerTeamRole']?.[localVarOperationServerIndex]?.url;
@@ -15378,7 +18296,7 @@ export const DeveloperPortalTeamApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerTeamAcceptInvite(requestParameters: DeveloperPortalTeamApiDeveloperTeamAcceptInviteRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerTeamAcceptInvite(requestParameters: DeveloperPortalTeamApiDeveloperTeamAcceptInviteRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperTeamAcceptInvite201Response> {
             return localVarFp.developerTeamAcceptInvite(requestParameters.xTenantID, requestParameters.acceptInviteRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -15388,7 +18306,7 @@ export const DeveloperPortalTeamApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerTeamIndex(requestParameters: DeveloperPortalTeamApiDeveloperTeamIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerTeamIndex(requestParameters: DeveloperPortalTeamApiDeveloperTeamIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperTeamAcceptInvite201Response> {
             return localVarFp.developerTeamIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -15398,7 +18316,7 @@ export const DeveloperPortalTeamApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerTeamInvite(requestParameters: DeveloperPortalTeamApiDeveloperTeamInviteRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerTeamInvite(requestParameters: DeveloperPortalTeamApiDeveloperTeamInviteRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperTeamAcceptInvite201Response> {
             return localVarFp.developerTeamInvite(requestParameters.xTenantID, requestParameters.inviteMemberRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -15408,7 +18326,7 @@ export const DeveloperPortalTeamApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerTeamRemove(requestParameters: DeveloperPortalTeamApiDeveloperTeamRemoveRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerTeamRemove(requestParameters: DeveloperPortalTeamApiDeveloperTeamRemoveRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.developerTeamRemove(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -15418,7 +18336,7 @@ export const DeveloperPortalTeamApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerTeamResendInvite(requestParameters: DeveloperPortalTeamApiDeveloperTeamResendInviteRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerTeamResendInvite(requestParameters: DeveloperPortalTeamApiDeveloperTeamResendInviteRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperTeamAcceptInvite201Response> {
             return localVarFp.developerTeamResendInvite(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -15428,7 +18346,7 @@ export const DeveloperPortalTeamApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        developerTeamRole(requestParameters: DeveloperPortalTeamApiDeveloperTeamRoleRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        developerTeamRole(requestParameters: DeveloperPortalTeamApiDeveloperTeamRoleRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeveloperTeamAcceptInvite201Response> {
             return localVarFp.developerTeamRole(requestParameters.id, requestParameters.xTenantID, requestParameters.changeMemberRoleRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -15677,7 +18595,7 @@ export const DeveloperPortalUsageAnalyticsApiAxiosParamCreator = function (confi
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -15722,7 +18640,7 @@ export const DeveloperPortalUsageAnalyticsApiAxiosParamCreator = function (confi
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -15767,7 +18685,7 @@ export const DeveloperPortalUsageAnalyticsApiAxiosParamCreator = function (confi
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -15800,7 +18718,7 @@ export const DeveloperPortalUsageAnalyticsApiFp = function(configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usageAnalyticsBreakdown(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async usageAnalyticsBreakdown(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsageAnalyticsSummary200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usageAnalyticsBreakdown(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalUsageAnalyticsApi.usageAnalyticsBreakdown']?.[localVarOperationServerIndex]?.url;
@@ -15813,7 +18731,7 @@ export const DeveloperPortalUsageAnalyticsApiFp = function(configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usageAnalyticsRateLimitStatus(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async usageAnalyticsRateLimitStatus(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsageAnalyticsRateLimitStatus200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usageAnalyticsRateLimitStatus(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalUsageAnalyticsApi.usageAnalyticsRateLimitStatus']?.[localVarOperationServerIndex]?.url;
@@ -15826,7 +18744,7 @@ export const DeveloperPortalUsageAnalyticsApiFp = function(configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usageAnalyticsSummary(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async usageAnalyticsSummary(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsageAnalyticsSummary200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usageAnalyticsSummary(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalUsageAnalyticsApi.usageAnalyticsSummary']?.[localVarOperationServerIndex]?.url;
@@ -15849,7 +18767,7 @@ export const DeveloperPortalUsageAnalyticsApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usageAnalyticsBreakdown(requestParameters: DeveloperPortalUsageAnalyticsApiUsageAnalyticsBreakdownRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        usageAnalyticsBreakdown(requestParameters: DeveloperPortalUsageAnalyticsApiUsageAnalyticsBreakdownRequest, options?: RawAxiosRequestConfig): AxiosPromise<UsageAnalyticsSummary200Response> {
             return localVarFp.usageAnalyticsBreakdown(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -15859,7 +18777,7 @@ export const DeveloperPortalUsageAnalyticsApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usageAnalyticsRateLimitStatus(requestParameters: DeveloperPortalUsageAnalyticsApiUsageAnalyticsRateLimitStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        usageAnalyticsRateLimitStatus(requestParameters: DeveloperPortalUsageAnalyticsApiUsageAnalyticsRateLimitStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<UsageAnalyticsRateLimitStatus200Response> {
             return localVarFp.usageAnalyticsRateLimitStatus(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -15869,7 +18787,7 @@ export const DeveloperPortalUsageAnalyticsApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usageAnalyticsSummary(requestParameters: DeveloperPortalUsageAnalyticsApiUsageAnalyticsSummaryRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        usageAnalyticsSummary(requestParameters: DeveloperPortalUsageAnalyticsApiUsageAnalyticsSummaryRequest, options?: RawAxiosRequestConfig): AxiosPromise<UsageAnalyticsSummary200Response> {
             return localVarFp.usageAnalyticsSummary(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -15998,7 +18916,7 @@ export const DeveloperPortalWebhookDeliveryLogsApiAxiosParamCreator = function (
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -16047,7 +18965,7 @@ export const DeveloperPortalWebhookDeliveryLogsApiAxiosParamCreator = function (
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -16080,7 +18998,7 @@ export const DeveloperPortalWebhookDeliveryLogsApiFp = function(configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookDeliveryLogIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookDeliveryLogIndex(xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookDeliveryLogIndex(xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalWebhookDeliveryLogsApi.webhookDeliveryLogIndex']?.[localVarOperationServerIndex]?.url;
@@ -16094,7 +19012,7 @@ export const DeveloperPortalWebhookDeliveryLogsApiFp = function(configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookDeliveryLogRetry(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookDeliveryLogRetry(id: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookDeliveryLogRetry201Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookDeliveryLogRetry(id, xTenantID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalWebhookDeliveryLogsApi.webhookDeliveryLogRetry']?.[localVarOperationServerIndex]?.url;
@@ -16117,7 +19035,7 @@ export const DeveloperPortalWebhookDeliveryLogsApiFactory = function (configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookDeliveryLogIndex(requestParameters: DeveloperPortalWebhookDeliveryLogsApiWebhookDeliveryLogIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookDeliveryLogIndex(requestParameters: DeveloperPortalWebhookDeliveryLogsApiWebhookDeliveryLogIndexRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.webhookDeliveryLogIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -16127,7 +19045,7 @@ export const DeveloperPortalWebhookDeliveryLogsApiFactory = function (configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookDeliveryLogRetry(requestParameters: DeveloperPortalWebhookDeliveryLogsApiWebhookDeliveryLogRetryRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookDeliveryLogRetry(requestParameters: DeveloperPortalWebhookDeliveryLogsApiWebhookDeliveryLogRetryRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookDeliveryLogRetry201Response> {
             return localVarFp.webhookDeliveryLogRetry(requestParameters.id, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
     };
@@ -16244,7 +19162,7 @@ export const DeveloperPortalWebhookTestingApiAxiosParamCreator = function (confi
             await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
 
             // authentication apiKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "X-Partner-Key", configuration)
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
 
 
     
@@ -16282,7 +19200,7 @@ export const DeveloperPortalWebhookTestingApiFp = function(configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookTestingSendTestEvent(subscriptionId: string, xTenantID: string, sendTestWebhookRequest: SendTestWebhookRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VirtualAccountQueryIndex200Response>> {
+        async webhookTestingSendTestEvent(subscriptionId: string, xTenantID: string, sendTestWebhookRequest: SendTestWebhookRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSubscriptionDestroy204Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookTestingSendTestEvent(subscriptionId, xTenantID, sendTestWebhookRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DeveloperPortalWebhookTestingApi.webhookTestingSendTestEvent']?.[localVarOperationServerIndex]?.url;
@@ -16305,7 +19223,7 @@ export const DeveloperPortalWebhookTestingApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookTestingSendTestEvent(requestParameters: DeveloperPortalWebhookTestingApiWebhookTestingSendTestEventRequest, options?: RawAxiosRequestConfig): AxiosPromise<VirtualAccountQueryIndex200Response> {
+        webhookTestingSendTestEvent(requestParameters: DeveloperPortalWebhookTestingApiWebhookTestingSendTestEventRequest, options?: RawAxiosRequestConfig): AxiosPromise<WebhookSubscriptionDestroy204Response> {
             return localVarFp.webhookTestingSendTestEvent(requestParameters.subscriptionId, requestParameters.xTenantID, requestParameters.sendTestWebhookRequest, options).then((request) => request(axios, basePath));
         },
     };
