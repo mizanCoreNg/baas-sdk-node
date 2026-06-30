@@ -12185,6 +12185,55 @@ export const DeveloperPortalManagedAccountsApiAxiosParamCreator = function (conf
             };
         },
         /**
+         * Returns a single managed account (id, NUBAN, status, currency, current balance in kobo, nickname, product/customer ids) for the authenticated managed partner. BOLA: a non-existent / cross-partner / non-managed account resolves to 404, never an existence oracle. Requires a granted ACCOUNT_DETAILS consent for the account\'s customer. Managed partners only (a licensed partner gets 422).
+         * @summary Get a managed account
+         * @param {string} accountId 
+         * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        developerAccountsShow: async (accountId: string, xTenantID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'accountId' is not null or undefined
+            assertParamExists('developerAccountsShow', 'accountId', accountId)
+            // verify required parameter 'xTenantID' is not null or undefined
+            assertParamExists('developerAccountsShow', 'xTenantID', xTenantID)
+            const localVarPath = `/api/v1/developer/accounts/{accountId}`
+                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication tenantHeader required
+            await setApiKeyToObject(localVarHeaderParameter, "X-Tenant-ID", configuration)
+
+            // authentication hmacAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
+
+            // authentication apiKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
+
+
+    
+            if (xTenantID != null) {
+                localVarHeaderParameter['X-Tenant-ID'] = String(xTenantID);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Returns the accounts this partner has opened for the given customer. BOLA: a customer this partner has no link to resolves to 404, never 200.
          * @summary List a customer\'s managed accounts
          * @param {string} customerId 
@@ -12338,6 +12387,55 @@ export const DeveloperPortalManagedAccountsApiAxiosParamCreator = function (conf
             };
         },
         /**
+         * Returns a single managed account (id, NUBAN, status, currency, current balance in kobo, nickname, product/customer ids) for the authenticated managed partner. BOLA: a non-existent / cross-partner / non-managed account resolves to 404, never an existence oracle. Requires a granted ACCOUNT_DETAILS consent for the account\'s customer. Managed partners only (a licensed partner gets 422).
+         * @summary Get a managed account
+         * @param {string} accountId 
+         * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        managedAccountShow: async (accountId: string, xTenantID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'accountId' is not null or undefined
+            assertParamExists('managedAccountShow', 'accountId', accountId)
+            // verify required parameter 'xTenantID' is not null or undefined
+            assertParamExists('managedAccountShow', 'xTenantID', xTenantID)
+            const localVarPath = `/api/v1/baas/accounts/{accountId}`
+                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication tenantHeader required
+            await setApiKeyToObject(localVarHeaderParameter, "X-Tenant-ID", configuration)
+
+            // authentication hmacAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "X-Signature", configuration)
+
+            // authentication apiKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "X-API-Key", configuration)
+
+
+    
+            if (xTenantID != null) {
+                localVarHeaderParameter['X-Tenant-ID'] = String(xTenantID);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Opens a real MFB customer_account (NUBAN) for a linked customer, partner-scoped, opened empty (funded by inbound credit). Managed partners only. Owner/admin/developer only.
          * @summary Open a managed account
          * @param {string} customerId 
@@ -12422,6 +12520,20 @@ export const DeveloperPortalManagedAccountsApiFp = function(configuration?: Conf
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Returns a single managed account (id, NUBAN, status, currency, current balance in kobo, nickname, product/customer ids) for the authenticated managed partner. BOLA: a non-existent / cross-partner / non-managed account resolves to 404, never an existence oracle. Requires a granted ACCOUNT_DETAILS consent for the account\'s customer. Managed partners only (a licensed partner gets 422).
+         * @summary Get a managed account
+         * @param {string} accountId 
+         * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async developerAccountsShow(accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedAccountIndex200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.developerAccountsShow(accountId, xTenantID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedAccountsApi.developerAccountsShow']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Returns the accounts this partner has opened for the given customer. BOLA: a customer this partner has no link to resolves to 404, never 200.
          * @summary List a customer\'s managed accounts
          * @param {string} customerId 
@@ -12465,6 +12577,20 @@ export const DeveloperPortalManagedAccountsApiFp = function(configuration?: Conf
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Returns a single managed account (id, NUBAN, status, currency, current balance in kobo, nickname, product/customer ids) for the authenticated managed partner. BOLA: a non-existent / cross-partner / non-managed account resolves to 404, never an existence oracle. Requires a granted ACCOUNT_DETAILS consent for the account\'s customer. Managed partners only (a licensed partner gets 422).
+         * @summary Get a managed account
+         * @param {string} accountId 
+         * @param {string} xTenantID Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async managedAccountShow(accountId: string, xTenantID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagedAccountIndex200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.managedAccountShow(accountId, xTenantID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DeveloperPortalManagedAccountsApi.managedAccountShow']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Opens a real MFB customer_account (NUBAN) for a linked customer, partner-scoped, opened empty (funded by inbound credit). Managed partners only. Owner/admin/developer only.
          * @summary Open a managed account
          * @param {string} customerId 
@@ -12501,6 +12627,16 @@ export const DeveloperPortalManagedAccountsApiFactory = function (configuration?
             return localVarFp.developerAccountsIndex(requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
+         * Returns a single managed account (id, NUBAN, status, currency, current balance in kobo, nickname, product/customer ids) for the authenticated managed partner. BOLA: a non-existent / cross-partner / non-managed account resolves to 404, never an existence oracle. Requires a granted ACCOUNT_DETAILS consent for the account\'s customer. Managed partners only (a licensed partner gets 422).
+         * @summary Get a managed account
+         * @param {DeveloperPortalManagedAccountsApiDeveloperAccountsShowRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        developerAccountsShow(requestParameters: DeveloperPortalManagedAccountsApiDeveloperAccountsShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedAccountIndex200Response> {
+            return localVarFp.developerAccountsShow(requestParameters.accountId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Returns the accounts this partner has opened for the given customer. BOLA: a customer this partner has no link to resolves to 404, never 200.
          * @summary List a customer\'s managed accounts
          * @param {DeveloperPortalManagedAccountsApiDeveloperCustomersAccountsIndexRequest} requestParameters Request parameters.
@@ -12531,6 +12667,16 @@ export const DeveloperPortalManagedAccountsApiFactory = function (configuration?
             return localVarFp.managedAccountIndex(requestParameters.customerId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
         },
         /**
+         * Returns a single managed account (id, NUBAN, status, currency, current balance in kobo, nickname, product/customer ids) for the authenticated managed partner. BOLA: a non-existent / cross-partner / non-managed account resolves to 404, never an existence oracle. Requires a granted ACCOUNT_DETAILS consent for the account\'s customer. Managed partners only (a licensed partner gets 422).
+         * @summary Get a managed account
+         * @param {DeveloperPortalManagedAccountsApiManagedAccountShowRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        managedAccountShow(requestParameters: DeveloperPortalManagedAccountsApiManagedAccountShowRequest, options?: RawAxiosRequestConfig): AxiosPromise<ManagedAccountIndex200Response> {
+            return localVarFp.managedAccountShow(requestParameters.accountId, requestParameters.xTenantID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Opens a real MFB customer_account (NUBAN) for a linked customer, partner-scoped, opened empty (funded by inbound credit). Managed partners only. Owner/admin/developer only.
          * @summary Open a managed account
          * @param {DeveloperPortalManagedAccountsApiManagedAccountStoreRequest} requestParameters Request parameters.
@@ -12553,6 +12699,27 @@ export interface DeveloperPortalManagedAccountsApiDeveloperAccountsIndexRequest 
      * Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
      * @type {string}
      * @memberof DeveloperPortalManagedAccountsApiDeveloperAccountsIndex
+     */
+    readonly xTenantID: string
+}
+
+/**
+ * Request parameters for developerAccountsShow operation in DeveloperPortalManagedAccountsApi.
+ * @export
+ * @interface DeveloperPortalManagedAccountsApiDeveloperAccountsShowRequest
+ */
+export interface DeveloperPortalManagedAccountsApiDeveloperAccountsShowRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperPortalManagedAccountsApiDeveloperAccountsShow
+     */
+    readonly accountId: string
+
+    /**
+     * Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+     * @type {string}
+     * @memberof DeveloperPortalManagedAccountsApiDeveloperAccountsShow
      */
     readonly xTenantID: string
 }
@@ -12628,6 +12795,27 @@ export interface DeveloperPortalManagedAccountsApiManagedAccountIndexRequest {
 }
 
 /**
+ * Request parameters for managedAccountShow operation in DeveloperPortalManagedAccountsApi.
+ * @export
+ * @interface DeveloperPortalManagedAccountsApiManagedAccountShowRequest
+ */
+export interface DeveloperPortalManagedAccountsApiManagedAccountShowRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeveloperPortalManagedAccountsApiManagedAccountShow
+     */
+    readonly accountId: string
+
+    /**
+     * Tenant identifier (UUID or domain, e.g. world.test.localhost). Required on every tenant-scoped route. Maps to the tenant whose database serves this request. In production, prefer Host-header-based resolution; X-Tenant-ID is intended for non-production environments and is rejected (HTTP 400) on production hosts.
+     * @type {string}
+     * @memberof DeveloperPortalManagedAccountsApiManagedAccountShow
+     */
+    readonly xTenantID: string
+}
+
+/**
  * Request parameters for managedAccountStore operation in DeveloperPortalManagedAccountsApi.
  * @export
  * @interface DeveloperPortalManagedAccountsApiManagedAccountStoreRequest
@@ -12682,6 +12870,18 @@ export class DeveloperPortalManagedAccountsApi extends BaseAPI {
     }
 
     /**
+     * Returns a single managed account (id, NUBAN, status, currency, current balance in kobo, nickname, product/customer ids) for the authenticated managed partner. BOLA: a non-existent / cross-partner / non-managed account resolves to 404, never an existence oracle. Requires a granted ACCOUNT_DETAILS consent for the account\'s customer. Managed partners only (a licensed partner gets 422).
+     * @summary Get a managed account
+     * @param {DeveloperPortalManagedAccountsApiDeveloperAccountsShowRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DeveloperPortalManagedAccountsApi
+     */
+    public developerAccountsShow(requestParameters: DeveloperPortalManagedAccountsApiDeveloperAccountsShowRequest, options?: RawAxiosRequestConfig) {
+        return DeveloperPortalManagedAccountsApiFp(this.configuration).developerAccountsShow(requestParameters.accountId, requestParameters.xTenantID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Returns the accounts this partner has opened for the given customer. BOLA: a customer this partner has no link to resolves to 404, never 200.
      * @summary List a customer\'s managed accounts
      * @param {DeveloperPortalManagedAccountsApiDeveloperCustomersAccountsIndexRequest} requestParameters Request parameters.
@@ -12715,6 +12915,18 @@ export class DeveloperPortalManagedAccountsApi extends BaseAPI {
      */
     public managedAccountIndex(requestParameters: DeveloperPortalManagedAccountsApiManagedAccountIndexRequest, options?: RawAxiosRequestConfig) {
         return DeveloperPortalManagedAccountsApiFp(this.configuration).managedAccountIndex(requestParameters.customerId, requestParameters.xTenantID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns a single managed account (id, NUBAN, status, currency, current balance in kobo, nickname, product/customer ids) for the authenticated managed partner. BOLA: a non-existent / cross-partner / non-managed account resolves to 404, never an existence oracle. Requires a granted ACCOUNT_DETAILS consent for the account\'s customer. Managed partners only (a licensed partner gets 422).
+     * @summary Get a managed account
+     * @param {DeveloperPortalManagedAccountsApiManagedAccountShowRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DeveloperPortalManagedAccountsApi
+     */
+    public managedAccountShow(requestParameters: DeveloperPortalManagedAccountsApiManagedAccountShowRequest, options?: RawAxiosRequestConfig) {
+        return DeveloperPortalManagedAccountsApiFp(this.configuration).managedAccountShow(requestParameters.accountId, requestParameters.xTenantID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
